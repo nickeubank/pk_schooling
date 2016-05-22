@@ -1,0 +1,66 @@
+\documentclass[Eubank_pk_ethnic_sorting.tex]{subfiles}
+
+
+\begin{document}
+
+The key to determining whether the government-private test score gap is caused by private schools delivering quality educations or by more academically-inclined students attending private schools is understanding what motivates parents to pick one type of school over the other. This Section provides an overview of how households make these choices, and how those choices vary by village caste composition. 
+
+
+\subsection{Selection in Homogeneous Villages}\label{}
+
+As shown in Table~\ref{hhselection} below, which regresses the choice to send a child to a private school on a number of characteristics, parental perceptions of child intelligence are an extremely strong predictor of whether a parent will send their child to a private school. Most notably in this table, this pattern holds even \emph{within individual households}. As shown in Column 2, which includes household fixed effects, many parents send the child they perceive to be more intelligent to private school and the child they perceive to be less intelligent to government schools. 
+
+\input{../regressions/hhselection.tex}
+
+Indeed, this pattern also extends beyond school choice into other domains, such as household expenditure on  educational materials and the amount of time parents spend helping their children with school work. In the words of the original LEAPS survey authors, ``through their choices of whether to enroll a child, through the choice of school ([government] or private) and finally through the amount they chose to spend, households pick ``winners'' and try to carry them through.'' \citep[p. 103]{Andrabi:2007we}
+
+The implications of this behavioral tendency for understanding the government-private school test gap is clear: if parents are choosing to send their more academically-inclined children to private schools, and if parents have more information about student quality than researchers are able to measure in surveys and control for statistically, then standard analyses are likely to systematically overstate the quality of private school educations. 
+
+\subsection{Selection in Heterogeneous Villages}\label{}
+
+While the tendency for parents to invest in ``winners'' rather than distribute resources is a general tendency in the LEAPS data, it is not the only factor that shapes school choice.  In more caste-heterogeneous villages, the \emph{social} composition of schools becomes increasing salient and washes out much of this ``sorting on intelligence.'' Instead, \emph{all} children from ``high status'' \emph{biraderis} -- regardless of perceived academic potential -- are sent to private schools to isolate them from lower-status families. And as a result, children from ``low status'' \emph{biraderis} become concentrated in government schools. School choice, in other words, ends up being driven by social rather than academic considerations. 
+
+\subsubsection{Evidence of Segregation}
+
+Figure~\ref{toptwo} plots the population share of the two largest biraderis among students in the village at large and in each school level respectively. If students were uniformly distributed across schools, these figures would look nearly identical. In reality, however, in almost all schools the vast majority of students belong to only two (or fewer) castes, even in highly diverse villages. 
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{Village and School Fractionalization}\label{toptwo}
+		\includegraphics[scale=.6]{../graphs/village_toptwo.pdf}\includegraphics[scale=0.6]{../graphs/school_toptwo.pdf}
+	\end{center}
+\end{figure}
+
+Segregation can also be seen in a comparison of village-level herfindahls and intra-school herfindahls. If schools were unsegregated, then we would expected the herfindahl indices computed \emph{within} each school to track closely with herfindahl indices computed at the village level. Yet as shown in Figure~\ref{schoolvvillageherf}, this is far from the case. Almost all schools are below the 45 degree line that would indicate school and village diversity moving one for one, and many are well below.
+
+\begin{figure}[H]
+	\begin{center}
+	\caption{School Versus Village Fragmentation}\label{schoolvvillageherf}
+	\includegraphics[scale=1.0]{../graphs/intra_versus_intervillage_frac_combined.pdf}
+	\end{center}
+\end{figure}
+
+
+
+\subsubsection{Evidence of High Caste Private School Attendance}
+
+This data shows a clear pattern of segregation, but it does not provide an entirely clear picture of which groups are attending which schools.  Grouping \emph{biraderis} into ``high'' and ``low'' social status groupings allows for a better understanding of segregation patterns. The crudeness of these categorizations is unfortunate, but necessary -- although \emph{biraderis} are associated with strict hierarchies within villages, there does not exist an explicit global hierarchy of \emph{biraderis} in Pakistan as in with the more familiar \emph{varna} caste designations India. As a result, these hierarchies may vary somewhat from village to village, and as noted previously, this variation may not perfectly follow economic position. 
+
+To estimate the social status of different \emph{biraderis}, Punjabi Pakistanis recruited on \emph{oDesk.com} were asked to classify \emph{biraderis} as having either ``high'' or ``low'' social status. Details of classifications can be found in Appendix~\ref{appendix_classification}.\footnote{This work has avoided the \cite{Jacoby:2011tc} methodology -- where castes are ranked on the basis of their land holding -- due to input from numerous sources that social standing and land holding are not equivalent, and in this exercise \emph{social}-status is of substantially more importance than \emph{socio-economic} status.}
+
+As shown in Table~\ref{highpooling}, in villages with higher caste fractionalization, a larger share of private school students come from higher status \emph{biraderis} and a larger share of government school students come from low \emph{biraderis}. Private schools, in other words, become reservoirs of the social elite. 
+
+
+\input{../regressions/high_pooling.tex}
+
+Demand for caste segregation is also manifest in the dramatically higher prices charged by segregated private schools. As shown in Table~\ref{fees} below, moving from a perfectly non-fractionalized village to a perfectly fractionalized village is associated with a 600 Rupees increase in annual school fees. Given that the average annual fee for all private schools in the LEAPS survey is 1191 Rupees, this is a very significant amount.\footnote{Fees above the 95th percentile -- 1900 Rupees -- were adjusted down to 1900 Rupees. Without this adjustment, the coefficient on village fractionalization is approximately 950 Rupees with a t-stat of 2.09} 
+
+\input{../regressions/fees.tex}
+
+Further, as shown in Table~\ref{privateshare}, none of these changes are driven by a change in the share of students in private schools. The percentage of students in private schools in almost perfectly stable, even when controlling for numerous village characteristics. 
+
+\input{../regressions/private_share.tex}
+
+
+\end{document}
+
