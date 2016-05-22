@@ -1,0 +1,13 @@
+to do:
+
+Table: hhselection
+household selection on intelligence -- one column without fixed effects, one with. 
+
+schoolbiraderipolarization
+
+noaggregate
+Shows no test score difference without interaction
+
+quantile: quantile regressions.
+
+govteachers: any difference in govt schools?

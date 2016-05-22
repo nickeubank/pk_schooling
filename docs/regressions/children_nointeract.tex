@@ -1,0 +1,39 @@
+\begin{sidewaystable}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Child Test Scores and Fractionalization \label{kidsnointeract}}
+\begin{tabular}{l*{8}{c}}
+\toprule
+                &\multicolumn{2}{c}{English}&\multicolumn{2}{c}{Urdu} &\multicolumn{4}{c}{Math}                           \\\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-9}
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                &\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}\\
+\midrule
+Private School  &     0.31***&     0.29***&     0.31***&     0.29***&     0.14***&     0.14***&     0.11***&    0.087** \\
+                &  (10.98)   &  (10.42)   &  (10.98)   &  (10.42)   &   (5.74)   &   (5.65)   &   (3.17)   &   (2.58)   \\
+Biraderi Fractionalization&     0.13*  &    0.096   &     0.13*  &    0.096   &    0.085   &    0.069   &     0.13   &     0.13   \\
+                &   (1.70)   &   (1.33)   &   (1.70)   &   (1.33)   &   (1.26)   &   (1.08)   &   (1.34)   &   (1.46)   \\
+Lagged English Scores&     0.40***&     0.39***&     0.40***&     0.39***&     0.16***&     0.14***&     0.17***&     0.16***\\
+                &  (22.32)   &  (21.10)   &  (22.32)   &  (21.10)   &  (13.39)   &  (11.90)   &  (10.27)   &   (9.92)   \\
+Lagged Math Scores&    0.067***&    0.070***&    0.067***&    0.070***&     0.12***&     0.12***&     0.39***&     0.40***\\
+                &   (8.18)   &   (8.37)   &   (8.18)   &   (8.37)   &  (14.51)   &  (14.00)   &  (30.92)   &  (28.87)   \\
+Lagged Urdu Scores&     0.15***&     0.15***&     0.15***&     0.15***&     0.39***&     0.40***&     0.23***&     0.22***\\
+                &  (13.26)   &  (12.80)   &  (13.26)   &  (12.80)   &  (34.01)   &  (31.76)   &  (17.96)   &  (16.87)   \\
+Village: Pct Adults Literate&  0.00067   &  0.00022   &  0.00067   &  0.00022   & -0.00018   & -0.00053   &  0.00043   &  0.00036   \\
+                &   (0.68)   &   (0.23)   &   (0.68)   &   (0.23)   &  (-0.21)   &  (-0.61)   &   (0.31)   &   (0.27)   \\
+Log Village Size&    0.017   &    0.019   &    0.017   &    0.019   &    0.011   &    0.014   &   0.0070   &   0.0087   \\
+                &   (1.33)   &   (1.39)   &   (1.33)   &   (1.39)   &   (0.73)   &   (1.01)   &   (0.35)   &   (0.50)   \\
+Village Land Gini&   0.0097   &    0.045   &   0.0097   &    0.045   &    0.013   &    0.059   &    -0.28** &    -0.25*  \\
+                &   (0.08)   &   (0.39)   &   (0.08)   &   (0.39)   &   (0.13)   &   (0.61)   &  (-2.22)   &  (-1.90)   \\
+Child's Wealth Index&            &    0.015***&            &    0.015***&            &   0.0068** &            &    0.016***\\
+                &            &   (4.22)   &            &   (4.22)   &            &   (2.27)   &            &   (3.73)   \\
+Educated Parent &            &    0.053***&            &    0.053***&            &    0.049***&            &    0.043***\\
+                &            &   (4.13)   &            &   (4.13)   &            &   (4.42)   &            &   (3.08)   \\
+Constant        &     0.44   &     0.63** &     0.44   &     0.63** &     0.67***&     0.80***&     0.32   &     0.61*  \\
+                &   (1.57)   &   (2.52)   &   (1.57)   &   (2.52)   &   (2.65)   &   (2.83)   &   (0.87)   &   (1.76)   \\
+District Fixed Effects&      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   \\
+\midrule
+Observations    &    37147   &    26141   &    37147   &    26141   &    37147   &    26141   &    37147   &    26141   \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.}\\
+\multicolumn{9}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{sidewaystable}

@@ -1,0 +1,33 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Student Social Status by School Type\label{highpooling}}
+\begin{tabular}{l*{2}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                &\multicolumn{1}{c}{Pct of Students High Status}&\multicolumn{1}{c}{Pct of Students High Status}\\
+\midrule
+Private School  &    -0.11** &    -0.13** \\
+                &  (-2.30)   &  (-2.13)   \\
+Biraderi Fractionalization&   -0.047*  &    -0.19***\\
+                &  (-1.85)   & (-14.78)   \\
+Fractionalization * Private&     0.18** &     0.21** \\
+                &   (2.34)   &   (2.15)   \\
+Median Village Expenditure&0.0000014   &            \\
+                &   (0.87)   &            \\
+Village: Pct Adults Literate&  0.00022   &            \\
+                &   (1.22)   &            \\
+Log Village Size&  0.00074   &            \\
+                &   (0.16)   &            \\
+Village: Pct High Status&     1.01***&            \\
+                &  (62.12)   &            \\
+Constant        &  -0.0039   &     1.00***\\
+                &  (-0.10)   &  (83.16)   \\
+District Fixed Effects&      Yes   &       No   \\
+Village Fixed Effects&       No   &      Yes   \\
+\midrule
+Observations    &      782   &      782   \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{3}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{table}

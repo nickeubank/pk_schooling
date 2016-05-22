@@ -1,0 +1,29 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Private English Scores}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{2}{c}{Grade 3}&\multicolumn{3}{c}{Grade 5}           \\\cmidrule(lr){2-3}\cmidrule(lr){4-6}
+                &\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{District Fixed}\\
+\midrule
+Nick's Fractionalization&    0.078   &     0.42*  &  -0.0032   &     0.29   &    0.058   \\
+                &   (0.37)   &   (1.90)   &  (-0.01)   &   (1.13)   &   (0.34)   \\
+Female          &     0.10** &     0.11***&     0.13***&     0.14***&    0.097***\\
+                &   (2.45)   &   (2.77)   &   (3.24)   &   (3.53)   &   (3.23)   \\
+Educated Parent &     0.12***&     0.14***&    0.062   &    0.087** &    0.043   \\
+                &   (3.85)   &   (4.75)   &   (1.32)   &   (1.99)   &   (1.24)   \\
+Child Age       &    0.032   &    0.024   &   -0.020   &   -0.045   &   -0.096   \\
+                &   (0.60)   &   (0.44)   &  (-0.29)   &  (-0.61)   &  (-1.62)   \\
+Age Squared     &  -0.0013   &  -0.0016   &  0.00067   &   0.0011   &   0.0035   \\
+                &  (-0.50)   &  (-0.61)   &   (0.20)   &   (0.33)   &   (1.32)   \\
+Child PCA       &    0.055***&    0.050***&    0.038***&    0.034** &    0.012   \\
+                &   (5.32)   &   (5.11)   &   (2.65)   &   (2.55)   &   (1.08)   \\
+Lagged English Score&            &            &            &            &     0.55***\\
+                &            &            &            &            &  (17.11)   \\
+\midrule
+Observations    &     2270   &     2270   &     1585   &     1585   &     1585   \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{table}

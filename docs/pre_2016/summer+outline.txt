@@ -1,0 +1,23 @@
+
+Overview:
+	- Show results on how government schools don't respond to anything (to ex-ante address concern that changes in ELF drive changes in government accountability and thus performance).
+
+Selection:
+	- in household survey, parental perceptions of intelligence are a HUGE predictor of choosing a private school. So yes people pick winners. 
+	- Schools pretty clearly segregated by intra-school versus inter-school HERF measures.
+	- The share of student in private schools who come from a high status caste increases with ELF -- so high castes are sending their kids to private schools more in high ELF settings.
+	- Maybe: As ELF increases, high status castes more likely to use private schools in HH survey. This finding is kinda iffy and not robust. 
+
+Impact:
+	- Get clear convergence in public and private test scores as ELF rises. True in all subjects, particularly true in English (which is what everyone cares about most).
+	- Most importantly: the convergence is entirely driven by the bottom end of the government school distribution improving and the bottom end of the private school distribution getting worse. This is perfectly consistent with high caste parents leaving the dumb kids in private schools in low ELF villages, but then paying for private schools to keep them away from the riff-raff in high ELF. 
+
+
+
+Other evidence:
+	- So there's a big distance penalty for enrollment -- people tend to go to close schools. So if a government school is far from private schools, it should get BOTH smart and dumb kids, while if a government school is close to a private school, it should only get dumb kids. In other words, if sorting is a big deal, then government student test scores should be higher if they would otherwise have to walk really far to the nearest private school. And this is true. 
+	
+Other mechanisms:
+	- no change in teacher quality
+	- 
+

@@ -1,0 +1,29 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Private Math Scores}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{2}{c}{Grade 3}&\multicolumn{3}{c}{Grade 5}           \\\cmidrule(lr){2-3}\cmidrule(lr){4-6}
+                &\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{District Fixed}\\
+\midrule
+Nick's Fractionalization&     0.59***&     0.60** &     0.16   &     0.19   &    -0.11   \\
+                &   (2.91)   &   (2.43)   &   (0.72)   &   (0.83)   &  (-0.50)   \\
+Female          &    0.030   &    0.029   &   -0.045   &   -0.035   &   -0.049   \\
+                &   (0.70)   &   (0.68)   &  (-0.90)   &  (-0.71)   &  (-1.22)   \\
+Educated Parent &     0.16***&     0.16***&     0.13***&     0.15***&    0.097** \\
+                &   (3.82)   &   (3.83)   &   (2.81)   &   (3.17)   &   (2.45)   \\
+Child Age       &    0.084   &    0.083   &    0.039   &    0.040   &   -0.018   \\
+                &   (1.38)   &   (1.36)   &   (0.50)   &   (0.53)   &  (-0.29)   \\
+Age Squared     &  -0.0019   &  -0.0019   &  -0.0021   &  -0.0023   & -0.00066   \\
+                &  (-0.67)   &  (-0.65)   &  (-0.60)   &  (-0.67)   &  (-0.24)   \\
+Child PCA       &    0.031***&    0.030***&    0.018   &    0.019   &    0.011   \\
+                &   (2.83)   &   (2.80)   &   (1.49)   &   (1.60)   &   (1.12)   \\
+Lagged Math Score&            &            &            &            &     0.48***\\
+                &            &            &            &            &  (18.14)   \\
+\midrule
+Observations    &     2270   &     2270   &     1585   &     1585   &     1585   \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{table}

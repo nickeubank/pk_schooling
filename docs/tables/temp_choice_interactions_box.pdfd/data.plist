@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowsCopying</key>
+	<true/>
+	<key>AllowsPrinting</key>
+	<true/>
+	<key>CreationDate</key>
+	<date>2012-11-04T23:13:41Z</date>
+	<key>Encrypted</key>
+	<false/>
+	<key>FileName</key>
+	<string>choice_interactions_box.pdfd</string>
+	<key>FileSize</key>
+	<string>0 bytes (0 bytes)</string>
+	<key>LogicalSize</key>
+	<integer>0</integer>
+	<key>ModDate</key>
+	<date>2012-11-04T23:13:41Z</date>
+	<key>PageCount</key>
+	<integer>1</integer>
+	<key>PageHeight</key>
+	<real>195.6506</real>
+	<key>PageSize</key>
+	<string>6.8 x 2.7 in  (8.3 x 11.7 in)</string>
+	<key>PageWidth</key>
+	<real>490.34411999999998</real>
+	<key>PhysicalSize</key>
+	<integer>0</integer>
+	<key>Producer</key>
+	<string>Mac OS X 10.7.5 Quartz PDFContext</string>
+	<key>Rating</key>
+	<real>0.0</real>
+	<key>Tags</key>
+	<array/>
+	<key>Version</key>
+	<string>1.3</string>
+</dict>
+</plist>

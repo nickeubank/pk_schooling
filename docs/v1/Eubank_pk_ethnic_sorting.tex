@@ -1,0 +1,119 @@
+\documentclass[11pt]{article} 
+\usepackage{amsfonts, amsmath, amssymb} 
+\usepackage{dcolumn, multirow} 
+\usepackage{setspace} 
+\usepackage{epsfig, subfigure, subfloat, graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx} 
+\usepackage{anysize, indentfirst, setspace} 
+\usepackage{verbatim, rotating, paralist}
+\usepackage{pdfsync} 
+\usepackage{latexsym} 
+\usepackage{amsthm} 
+\usepackage{fullpage} 
+\usepackage{longtable} 
+\usepackage{natbib} 
+\usepackage{graphicx} 
+\usepackage{mathabx} 
+\usepackage{txfonts} 
+\usepackage{amsfonts} 
+\usepackage{parskip} 
+\usepackage{stmaryrd} 
+\usepackage{mathrsfs} 
+\usepackage{dsfont} 
+\usepackage{comment} 
+\usepackage{url} 
+\usepackage{rotating} 
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{subfiles}
+
+\usepackage[capposition=top]{floatrow}
+
+\newcommand{\sym}[1]{\rlap{#1}}% Thanks to David Carlisle
+
+% Allow line breaks with \\ in specialcells
+	\newcommand{\specialcellc}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+	\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+
+
+
+\usepackage[margin=3cm]{geometry}
+
+\title{Decomposing the Government-Private School \\ Performance Differential: \\ Village Ethnic Politics and School Sorting}
+\author{Nicholas Eubank\footnote{\href{mailto:nicholaseubank@stanford.edu}{nicholaseubank@stanford.edu}. This project would not have been possible without the exceptional support numerous parties, including Jishnu Das, Tahir Andrabi, Kate Casey, Neil Malhotra, Meredith Startz, and Paul Novosad.} \\ \emph{Stanford University GSB}}
+
+\date{\today}
+
+% This is the beginning of a real document!
+
+\begin{document} 
+\maketitle
+\begin{center}
+\vspace{3cm}
+
+\textbf{PRELIMINARY DRAFT \\ PLEASE DO NOT CITE WITHOUT AUTHOR'S PERMISSION} \\
+
+\vspace{0.1cm}
+\color{blue}\href{http://www.nickeubank.com/eubank_schoolsorting/}{Click here to download the most recent version of this paper.}\color{black}
+\end{center}
+
+\begin{abstract}
+The emergence of rural, secular, affordable private schools across South Asia is one of the most promising developments in the education sector in decades. Yet the question of whether private schools are actually superior to government schools remains unsettled. Observational studies consistently show that private school students outperform government school students, but it is unclear whether this is because (a) private schools provide students with a better education, or (b) more talented students attend private schools. This paper leverages a source of variation in school choice -- in caste-homogeneous villages, school choice is driven by perceptions of academic potential, while in caste-heterogeneous villages school choice is motivated by a desire to segregate students by caste -- to shed new light on this question. It finds that the government-private school test gap is two times larger when school choice is driven by academic potential (even after controlling for a substantial number of observable and unobservable factors), suggesting at least 50\% of the difference between government and private school test scores can be explained by differences in student composition, not teaching quality. 
+\end{abstract}
+
+\thispagestyle{empty}
+
+
+
+\pagebreak
+
+\setcounter{page}{1}
+
+
+\section{Introduction}\label{}
+
+	\subfile{part_introduction.tex}
+
+\section{Study Context}\label{context}
+
+	\subfile{part_context.tex}
+
+\section{Caste Politics and School Sorting}\label{sorting} % Frac (fold)
+
+	\subfile{part_sorting.tex}
+
+
+\section{School Sorting and Test Scores}\label{scores}
+
+	\subfile{part_scores.tex}
+
+
+\section{Alternate Explanations}\label{alternates}
+
+	\subfile{part_alternatives.tex}
+
+\section{Discussion and Policy Implications}\label{conclusion}
+
+	\subfile{part_conclusion.tex}
+
+
+
+\pagebreak
+
+	\bibliography{/Users/Nick/Documents/my_library}
+	\bibliographystyle{apalike}
+
+\appendix
+
+\section{Value-Added Test Scores}\label{appendix_valueadded}
+
+	\subfile{appendix_valueadded.tex}
+
+
+
+
+\end{document}

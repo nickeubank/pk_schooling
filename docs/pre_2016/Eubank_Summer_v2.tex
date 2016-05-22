@@ -1,0 +1,321 @@
+\documentclass[12pt]{article} 
+\usepackage{amsfonts, amsmath, amssymb} 
+\usepackage{dcolumn, multirow} 
+\usepackage{setspace} 
+\usepackage{epsfig, subfigure, subfloat, graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx} 
+\usepackage{anysize, indentfirst, setspace} 
+\usepackage{verbatim, rotating, paralist}
+% \usepackage{pdfsync} 
+\usepackage{latexsym} 
+\usepackage{amsthm} 
+\usepackage{fullpage} 
+\usepackage{longtable} 
+\usepackage{natbib} 
+\usepackage{graphicx} 
+\usepackage{mathabx} 
+\usepackage{txfonts} 
+\usepackage{amsfonts} 
+\usepackage{parskip} 
+\usepackage{stmaryrd} 
+\usepackage{mathrsfs} 
+\usepackage{dsfont} 
+\usepackage{comment} 
+\usepackage{url} 
+\usepackage{rotating} 
+\usepackage{appendix}
+\usepackage[capposition=top]{floatrow}
+
+\usepackage[margin=2.2cm]{geometry}
+
+\title{The Illusion of Primary School Dominance in Rural Pakistan}
+\author{Nick Eubank}
+\date{\today}
+
+\setcounter{tocdepth}{2}
+
+% This is the beginning of a real document!
+\begin{document} 
+\maketitle
+
+Developing countries -- particularly those in South Asia -- have experienced explosive growth in the rural private schools. From 2000 to 3005 in rural Pakistan, for example,``the number of private schools in Pakistan increased from 32,000 to 47,000 and by the end of 2005, one in every 3 enrolled children at the primary level was studying in a private school.'' \citep[p. vi]{Andrabi:2007we}. Similarly 20-24\% of rural students in India report attending a private school in 2005 \citep{Pratham:2005vw}. 
+
+Excitingly, the students in these private schools consistently outperform their government school counterparts in a number of observational studies, even when controlling for observable student characteristics.\citep{Jimenez:1991wa, Jimenez:1995vg, Pratham:2005vw, Andrabi:2011hl, Desai:2009ty, Tooley:2003vf, Alderman:2003we, Alderman:2001wk} This has led many to hope that private schools may be the key to circumventing reform-resistant government schools and finally delivering quality educations to the hundreds of millions of children in rural India and Pakistan.
+
+Yet while observational studies give hope that private schools may be the answer to the stagnation of education reform, the question of whether private schools really deliver a superior education remains -- perhaps to a surprising degree -- undecided. 
+
+Advocates of private schools point to the fact that studies showing private school superiority are able to control for a number of observable student characteristics in estimating performance differences, such as household wealth and parental education. Moreover, they point out that private schools address many of the problems recognized in government schools. For example, the problem of high absenteeism and low accountability in government schools has been well documented \citep{Muralidharan:2008tb, Chaudhury:2006vp}. But in private schools, evidence suggests that good teachers are better paid, and poor teachers are let go\citep{Andrabi:2007we}. This line of reasoning is also bouyed by a growing body of literature that suggests that what matters for success is not the availability of educational ``inputs'' (like qualified, well paid teachers or good facilities), but incentive schemes that reward effort on the behalf of teachers  \citep{Hanushek:1997tt}\citep{Hanushek:1997tt,Hanushek:2003hz,Banerjee:2007wx}. 
+
+Yet while highly suggestive, these observational studies remain haunted by the question of whether private school students are different from government school students in some un-observable way. As \cite{Banerjee:2009uu} recently noted as a discussant on an observational study:
+\begin{quote}
+	The reason why it is always been a challenge to answer this question is that there is an identification problem. The paper is very conscious of this: It basically comes down to the question, ``Are children who get sent to private schools different from those who are not?'' This is a problem at every level -- within a family, within a neighborhood, within a district within a state. [...]You worry that the child who gets sent to the public school rather than the private school by a family that can afford both, might have certain characteristics that are driving the choice. As a result, there is the eternal search for an instrument. What you want is something that influences the private school participation but not performance. This can be a frustrating effort. 
+\end{quote}
+
+Evidence from the United States suggests the importance of this consideration. For example, while private schools generally outperform public schools in the US and many have attributed that to better incentive structures, private-run government charter schools (which presumably have a similar incentive system but do not necessarily have the saw draw for educationally minded families) have not faired so well.\citep{Fuller:2002td} And while two studies of randomly granted private-school vouchers suggest that the private school effect may be real, but studies have been complicated by a number of problems which make inference difficult.\footnote{\cite{Angrist:2002up} examines a voucher lottery system in Colombia. They find a small positive effect of vouchers, but inference is clouded by the fact that voucher students who performed poorly were at risk of losing their vouchers, making it impossible to separate this incentive effect from the private school effect. Chile has also run a major voucher system which again shows a small private school premium, but as \cite{Bellei:2008uu} notes, this slight advantage may be down to the fact that private school admissions are selective and poorly performing students can be expelled from private schools, making it difficult to disentangle selectivity from school effects.}
+
+The stakes for this debate could hardly be higher. If, on the one hand, private schools are a model of improved teaching, then private school growth could deliver the improved learning outcomes that have proven hard to generate in the difficult-to-reform public sector. But if, on the other hand, private school dominance is illusory, then the emergence of vouchers may lead to parents fleeing government schools. 
+
+This paper evaluates the compatibility of these two schools of thought with a novel empirical regularity: the degree to which private schools outperform government schools declines dramatically as villages become more fractionalized by caste. This pattern provides a new and extremely clean test of existing theories: if the existing evidence for either of these theories cannot be shown to vary with village fractionalization, then it clearly cannot account for this finding. For example, if private school teachers are rewarded for performance to the same degree in low and high fractionalization villages, but the degree to which private schools outperform government schools declines with fractionalization, this suggests private school compensation schemes are likely not the driver of private school performance.
+
+Note that the novelty of this approach lies not in the introduction of a new empirical regularity, but in the introduction of a new regularity that operates at a different level of analysis than previous studies. Most eduction work takes children, households, or schools to be the unit of analysis, but to date this approach has failed to answer even these most basic questions. By bringing in not just a new source of exogenous variation, but rather an entirely new \emph{level} of variation, this approach will hopefully not only bring new perspective to these issues, but also provide a model for future work. 
+
+This paper is organized out as follows: Section~\ref{data} provides an overview of the data and methods employed in this analysis. Section~\ref{convergence} introduces the empirical regularity around which this paper is organized -- that as caste fractionalization increases, the difference between government and private school performance declines. Section~\ref{teaching} examines some of the evidence that private schools are better educators and shows it cannot explain the convergence of test scores in high fractionalization villages. Section~\ref{sorting} that shows public-private test score convergence can instead be explained by a change in the criteria used by children to pick schools. And finally Section~\ref{discussion} discusses the strengths and weaknesses of these findings, and how they might best be interpreted. It also provides a number of possible explanations for the question of why, if their dominance is illusory, private schools are still able to fill their classrooms with fee-paying students. 
+
+\section{Data and Methodology}\label{data} % data (fold)
+
+This analysis is based on panel data from the Learning and Educational Attainment in Punjab Schools (LEAPS) survey, administered jointly by the World Bank, Pomona College, Harvard University, and with the assistance of the Government of Punjab. The LEAPS survey was conducted in 112 villages in the Punjab districts of Attock, Faisalabad, and Rahim Yar Khan annually from 2003-2007. The data consists primarily of two panels of students -- one (initiated in 2003 with an initial population of 12,110 children) which followed students for four years, and one (initiated in 2005 with an initial population of 11,852 students) which followed students for two years. Each panel represents the universe of enrolled students in sample villages in Class 3 in both government and private schools. 
+
+Students in both panels were administered annual exams in English, math, and Urdu. In addition, approximately half of students were administered demographic surveys which include questions on parental education and household wealth. These exams were designed and piloted by the LEAPS team, and subsequently standardized using Item Response Theory methods. The test scores presented here are the normalized IRT results, which have a mean of zero and standard deviation of one among students in Class 3. 
+
+In addition to testing and surveying students, the LEAPS survey also collected data on schools, teachers, and a random sample of 10 households per village with children of school-eligible age. Further, some data were also obtained from a listing census conducted in sample villages prior to the start of the LEAPS survey that include basic demographic information on all households, allowing for the computation of more accurate village level statistics.
+
+\subsection{Measuring Test Scores}\label{}
+
+Test data from the LEAPS survey is analyzed using a lagged value-added model, where current knowledge is assumed to be an additive function of all current and past inputs and a stochastic error term. As past inputs are unavailable, however, they are generally subsumed into a lagged dependent variable included as a control, so that valued-added regressions take the form 
+
+VALUE ADDED: \citep{Gordon:2006wt,McCaffrey:2003vk,Hanushek:2003hz}
+
+:
+\begin{eqnarray*}
+	y_{t}=X_t\beta+y_{t-1}\gamma + \epsilon_t
+\end{eqnarray*}
+Where X is a vector of child, school, and village controls, and $\gamma$ is assumed to capture all past inputs and unobservable heterogeneity across students. As the interest of this analysis is on the difference between government and private school students, primary interest is on a dummy for school type included in the vector of controls $X$. 
+
+Three aspects of this specification are worth emphasizing. First, while the inclusion of a lagged dependent variable effectively controls for unobserved differences that affect learning \emph{levels}, it cannot control for unobserved heterogeneity that affects \emph{learning} rates. It is for this reason that while superior to other available methods, value-added analyses can not fully overcome selection issues.\footnote{Some analysis have turned to second-differencing the data and focusing on students who change schools, but these analyses have their own limitations, among them limited sample sizes (given that changes between types of school are relatively infrequent in most surveys) and the assumption that school changes are not the result of some unobserved shock (i.e. that school switches are not accompanied by contemporaneous with other changes).}
+
+Second, the $\gamma$ term can be interpreted as the ``persistence parameter,'' in that it estimates the degree to which past learning may carry forward. A value of one is equivalent to assuming that children do not forget past lessons, while a value of zero corresponds to students forgetting all past lessons each year. While imposing a persistence parameter of one may seem reasonable -- it amounts to regressing the difference in test scores from time $t-1$ to time $t$ on controls -- a growing literature suggests that the test score gains of short term interventions often ``die out'' over time, suggesting this is not the case\citep{Banerjee:2007wx, Glewwe:2010hj,Currie:1995wo,Andrabi:2011hl, Rothstein:2010bk}, and so this parameter is left flexible. 
+
+Finally, lagged test scores from all three subjects -- English, Urdu, and math -- are included in all specifications to instruments for the primary lagged test score of interest. This helps to minimize the attenuation bias caused by measurement error in past test scores, a problem noted by numerous authors \citep{Kane:2002if,Chay:2005wu,Andrabi:2011hl}. 
+
+For robustness, the primary analysis of this paper is duplicated at the level of the village. To do so, child test scores are regressed on lagged test scores and demographic controls (as above) along with village fixed effects and separate private-school dummies for each village. The difference between the village private-school dummy coefficients and the village dummy coefficients are then extracted as a village-level estimate of the government-private test score gap. These village-level gaps are then regressed against a series of village-level controls, include village fractionalization, wealth, size, land fractionalization, and adult literacy. 
+
+
+
+% section data (end)
+
+\section{Caste Fractionalization and Test Score Convergence}\label{caste} % Frac (fold)
+
+The empirical regularity around which this paper is organized is that the degree to which private schools outperform government schools declines dramatically in caste-fragmented villages. Before presenting this result, a brief digression on the nature of ``caste'' in Punjab. Those with a familiarity with the concept of caste in Pakistan can jump ahead to Section~\ref{mainfinding}. 
+
+\subsection{Caste in Punjab}\label{}
+
+Caste -- known variously as \emph{biraderi} or \emph{zaat} -- is a central aspect of rural social identity in Pakistan, especially in Punjab. While biraderi is a somewhat distinct concept from the idea of ``caste'' in India, ``it retains a very important feature of the [Indian subcaste] -- that of an inherent, inbuilt hierarchy that governs social interactions. Society is hierarchically ordered with the Syeds at the top, followed by the landowning castes, then by the service castes or kammis, and finally by the Musallis, who occupy the lowest rung of the social ladder. This ordering dictates much of the social life in a Punjabi village and is most profound in the notions of community cooperation, where solidarity is strongest within a biraderi.''\citep[p. 29]{Gazdar:2007vt}. Further, while Biraderi is correlated with wealth, land holdings, and education, it is not synonymous with economic class. As a related report observes, ``while economic power is required to reinforce biraderi-based dominance, membership of a dominant biraderi can help mitigate some of the effects of being economically poor. As one respondent put it, `the poorest Jatt is still better off than the richest kammi.''' \citep[p. 13]{Gazdar:2007vt} 
+
+While the centrality of caste politics is relatively universal across villages in Punjab, however, there is significant variation in village \emph{biraderi} composition. Figure~\ref{fracdensities} below shows the density plot of villages of different levels of ethnic fractionalization, as measured by a simple herfindahl index.\footnote{The herfindahl is a common measure of fractionalization equal to the probability that any two randomly selected individuals belong to the same group. Village fractionalization is computed using data from a village census conducted in 2002 to facilitate household sampling for the LEAPS survey which includes data on the biraderi of all households in LEAPS villages. Details of included \emph{biraderis} are presented in Appendix~\ref{biarderis}.} As the figure shows, there is significant variation in the degree of fractionalization both within and across the three districts of the LEAPS survey.
+
+\begin{figure}[htb]
+	\begin{center}
+	\caption{}\label{fracdensities}
+	\includegraphics[scale=1.0]{graphs/village_frac_by_district.pdf}
+	\end{center}
+\end{figure}
+
+Interestingly, segregation is not clearly related to any other village characteristics, as shown below in Table~\ref{vsummary}. Nor is this lack of clear relationship driven by district differences -- as shown in Table~\ref{vsummarydemeaned}, in which summary statistics are computed after demeaning values for district averages. Please note that ``high,'' ``medium'' and ``low'' fractionalization in these tables refer to village fractionalization terciles. [Tables to be reformatted]
+
+\input{tables/village_summary.tex}
+\input{tables/village_summary_demeaned.tex}
+
+
+\subsection{Caste Fractionalization and }\label{mainfinding}
+Having provided some background on the nature of caste in Punjab, the main empirical regularity of the paper can be presented. Table~\ref{kids} presents regressions of child test scores on lagged test scores, village fixed effects, and a number of other controls. It shows that the effect of caste fractionalization on the government-private test score gap is negative and significant for English and Urdu, and negative (albeit insignificant) for math. Further, as shown in columns (2), (5), and (8) of Table~\ref{kids}, the inclusion of various demographic controls such as a child wealth index and dummies for parental education along with the village fixed effects has no significant effect on the results. 
+
+Given the difficulty associated with interpreting interaction terms, Figure~\ref{kidscombined} plots the government-private test score differential as a function of caste fractionalization (these plots correspond to columns (2), (5), and (8) respectively). In all three cases, the rise in fractionalization is associated with a near 50\% decline in the private school premium, although this is by far most striking in the case of English, which is considered the path to upward mobility, and is the speciality of private schools in Punjab. 
+
+Note that the decline in the government-private test score gaps is not coming just from improvement in government schools or a decline in private schools, but rather a combination of the two. This is shown in Column 3 of Table~\ref{kids}, where village fixed effects are replaced with district fixed effects, allowing for a comparison of test scores levels (rather than just the government-private gap) across villages. In the case of English the convergence appears to be driven in equal parts by improvements in government schools and a decline in private schools.
+\begin{figure}[h]
+	\caption{Private School Test Score Premium with Lagged Scores}\label{kidscombined}
+	\centering	
+	\includegraphics[scale=0.8]{graphs/kids_combined.pdf}
+\end{figure}
+
+\input{regressions/children.tex}
+
+Consistent results are also found from data at the level of the village, as shown in Table~\ref{villagegap}. As discussed in methodology, the dependent variable in these regressions is the village gap in government-private ``value-added'' scores after controlling for all available observable differences. This adjusted-gap is then regressed on a number of village characteristics. While the results are not quite as strong as when estimated at the level of the child, all three regressions show declines in the government-private gap associated with increasing fractionalization, especially for English. 
+
+\input{regressions/villagegap.tex}
+
+
+% fractionalization (end)
+
+
+
+\section{School Superiority}\label{overview}
+
+This section address the question of whether the convergence in public and private test scores in fractionalized villages is compatible with changes in the actual quality of teaching, either in government or private schools. This is addressed by first examining whether there are any differences in educational ``inputs'' (school facilities, teacher training and education, etc.) between homogenous and fractionalized villages. Then the difficult question of whether the way private schools operate changes across villages will be examined. 
+
+\subsection{Inputs}\label{}
+
+The most obvious way in which schools might differ across villages is in the quality of their teachers or facilities. The LEAPS survey collected extensive data on these questions, making this question readily answerable.
+
+Table~\ref{privateteachers} regresses a number of school- and teacher-quality dependent variables against village fractionalization and a number of controls. The table shows that there is little or no evidence that -- at least in terms of visible inputs -- private schools in fractionalized villages are different from those in homogenous villages. 
+\input{regressions/private_teachers.tex}
+
+Table~\ref{governmentteachers} repeats this exercise for government schools. It should be noted that government schools in Pakistan are administered at the state level, and are thus relatively insulated from village politics, making any such differences unlikely. And indeed, if anything Columns 1 through 5 show teachers in high fractionalization villages have better equipped government schools or better trained government teachers. 
+
+\input{regressions/government_teachers.tex}
+
+\subsection{Teacher Incentives}\label{}
+
+In 2003 the World Bank, Harvard University, and Pomona College, in conjunction with the Government of Punjab, mounted a massive four year survey of schools, students, teachers, and households in 112 villages in rural Punjab. The aim of the project -- the Learning and Educational Attainment in Punjab Schools (LEAPS) survey (on which this author was a research assistant) and on whose data this analysis is based -- was to study the inner workings of government and private schools in the hopes of better understanding how private schools were able to do so much with so little. 
+
+The conclusion of the LEAPS authors is that private schools are able to deliver better educational outcomes despite hiring local women with only secondary educations and no training and paying relatively low wages is that where government schools focus on inputs, private schools are output-oriented. Government schools pay their teachers well, but their pay is unrelated to the performance of their students. Private school teachers, by contrast, are paid more when their students do better. As a result, government school teachers exert less effort. As shown in Figure~\ref{payandabsenteeism} from the report, while frequently absent private school teachers are paid less, absent government school teachers are actually paid \emph{more}, and where private school teachers with high score students are paid more, no such relationship exists for government teachers. This leads the authors to conclude that:
+
+\begin{quotation}
+Teacher and institutional attributes can be broadly separated into three categories: hard to observe teacher characteristics such as motivation, which can emerge only over time, easy to observe characteristics such as educational qualifications, experience and training and, the institutional framework embodied in incentives such as the teacher salaries and bonuses. Research in the United States has tried to separate the influence of the first two types of characteristics (motivation and qualification); given that most of this research is for public school teachers, it has made less progress on the impact of incentives. This research finds that characteristics like motivation and a love of teaching are far more important in explaining the variation in student learning compared to educational qualifications, experience, and training. Experience for instance, matters only in the first year. In short, in systems with the same set of incentives, teachers appear to be born, not made.\citep[p. 78]{Andrabi:2007we}
+\end{quotation}
+
+\begin{figure}[htb]
+	\begin{center}
+	\caption{}\label{payandabsenteeism}
+	\includegraphics[scale=0.82]{graphs/absenteeism_and_pay.pdf} \includegraphics[scale=0.8]{graphs/compensation_scores.pdf}
+	\end{center}
+\end{figure}
+
+Table~\ref{teachercompensation} below recreates the analyses underlying two figures with two adjustments. First, rather than measuring performance using average test scores, teacher ``value-added'' scores are computed by including teacher-dummies in the child value-added regressions used above. These dummies are then extracted and used as estimates of the contribution of teachers to child learning. All regressions are weighted by the number of students taught by a teacher. Full details of this method can be found in Appendix~\ref{teachervalueadded}. 
+
+Second, a village fractionalization measure is included in all regressions as an interaction term. If it is the case that differences in incentive schemes are driving test score convergence, then we should see both the private-school salary penalty for absenteeism and the compensation bonus for performance decline in fractionalization. As shown in the table, however, the absenteeism penalty actually \emph{increases} in fractionalization (which under the incentive story should result in \emph{increased} private school scores), and no relationship exists between performance and compensation. 
+
+\input{regressions/teachercompensation.tex}
+
+
+
+\section{Sorting}\label{results} % (fold)
+
+The incompatibility of the ``incentive'' story with the convergence of public and private test scores suggests that the explanation for this pattern may be a change in how children sort into different types of schools. 
+
+One of the most compelling pieces of evidence for the sorting story is that despite strong evidence that the public-private test score gap declines with caste fractionalization, there is no aggregate relationship between academic performance and village fractionalization. Rather, Table~\ref{kidsnointeract} shows that scores are essentially flat -- English scores are slightly higher in more fractionalized villages in Column 1, but the magnitude of this difference is relatively small, and once more demographic controls are added in Column 2 this effect disappears. No relationship exists for other subjects. If it were the case that either government schools were performing better or private schools were performing worse in highly fractionalized schools, one would expect some consistent change in overall scores. Rather, this evidence suggests that for some reason more intelligent children are systematically more likely to attend private schools in homogenous villages, but this pattern breaks down in fractionalized villages. But why, precisely, is that pattern emerging? 
+
+\input{regressions/children_nointeract.tex}
+
+The answer appears to lie in the fact that in homogenous villages, parents choose the school primary on the basis of the academic potential of their child -- presumably because more talented children represent a better investment. But in more heterogenous villages, a new consideration creeps in: caste segregation. Rather than just sending their more gifted children to private schools, ``high status'' families send their children to private schools populated with other high status children regardless of their academic potential. This \emph{dilutes} the degree to which children are sorting on academic potential, leading to convergence of public and private schools.
+
+Note that this argument is dependent upon some basic assumptions about the distribution of talent across castes. In particular, it requires that residual talent -- that is talent that cannot be explained by things like parental education and wealth -- be either relatively equally distributed across the different social strata, or be distributed slightly in favor of lower status \emph{biraderis}. If not, and even the least talented ``high status'' students were more talented than the most talented ``low status'' students, then this type of sorting could result in \emph{divergence}, rather than \emph{convergence}, of test scores. As shown in Table~\ref{castesarentdumb}, however, there is no evidence that those from higher social status \emph{biraderis} have higher residual talent than those from low status \emph{biraderis}.
+
+\input{regressions/status.tex}
+
+
+\subsection{Investing in Winners}\label{}
+
+As shown in Table~\ref{hhselection} below, which regresses the choice to send a child to a private school on a number of characteristics, parental perceptions of child intelligence are an extremely strong predictor of whether a parent will send their child to a private school. Most notably in this table, this pattern holds even \emph{within individual households}. As shown in Column 2, which includes household fixed effects, many parents send the child they perceive to be more intelligent to private school and the child they perceive to be less intelligent to government schools. 
+
+\input{regressions/hhselection.tex}
+
+In more fractionalized villages, however, the social composition of schools becomes salient and this ``sorting on intelligence'' breaks down. Instead, children from ``high status'' \emph{biraderis} begin to concentrate in private schools and children from ``low status'' \emph{biraderis} become concentrated in government schools.
+
+This segregation of schools can be seen in a number of ways. Figure~\ref{numcastes} below plots the number of biraderis represented in each school for high, medium, and low fractionalized villages. As the figure shows, despite large differences in the fractionalization of the villages in which these schools operate, a remarkably similar numbers biraderis a present among their student bodies.
+
+\begin{figure}[H]
+	\begin{center}
+	\caption{}\label{numcastes}
+	\includegraphics[scale=1.0]{graphs/totalpresent.pdf}
+	\end{center}
+\end{figure}
+
+This figure is easily interpreted, but does not take into account the relative size of the population of each \emph{biraderi} within the student body. Figure~\ref{toptwo} plots the population share of the two largest biraderis among students in the village at large and in each school level respectively. Again, this figure shows that while in more fractionalized villages the share of students from the top two castes in the average school is indeed slightly lower, it does not come close to keeping pace with changes in village demographics.
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{Village and School Fractionalization}\label{toptwo}
+		\includegraphics[scale=.6]{graphs/village_toptwo.pdf}\includegraphics[scale=0.6]{graphs/school_toptwo.pdf}
+	\end{center}
+\end{figure}
+
+And finally, if schools are unsegregated, then we would expected herfindahl indices computed within each school to track closely with herfindahl indices computed at the village level. Yet as shown in Figure~\ref{schoolvvillageherf}, this is far from the case. Almost all schools are below the 45 degree line that would indicate school and village diversity moving one for one, and many are well below.
+
+\begin{figure}[H]
+	\begin{center}
+	\caption{}\label{schoolvvillageherf}
+	\includegraphics[scale=1.0]{graphs/intra_versus_intervillage_frac_combined.pdf}
+	\end{center}
+\end{figure}
+
+This data shows a clear pattern of segregation, but it does not provide an entirely clear picture of which groups are attending which schools.  Grouping \emph{biraderis} into ``high'' and ``low'' social status groupings allows for a better understanding of segregation patterns. The crudeness of these categorizations is unfortunate, but necessary -- although \emph{biraderis} are associated with strict hierarchies within villages, there does not exist an explicit global hierarchy of biraderis in Pakistan as in India. As a result, these hierarchies may vary somewhat from village to village, and as noted previously, this variation may not perfectly follow economic position. Fortunately, interviews with numerous Pakistanis has provided evidence that these categorizations are sufficient consistent at this level of generality and in the region of the LEAPS survey for these rankings to be useful.\footnote{Some interviewees have also provided threefold divisions, which generate consistent results with those presented here.} The specific groupings used in this paper can be found in Table~\ref{biraderiranks} in Appendix~\ref{biraderis}.
+
+As shown in Table~\ref{highpooling}, these categorizations make it possible to show that in villages with higher caste fractionalization, a larger share of private school students come from higher status \emph{biraderis} and a larger share of government school students come from low biraderis.
+
+
+\input{regressions/high_pooling.tex}
+
+Also consistent with this story is the fact that the price of private schools increases dramatically with \emph{biraderi} fractionalization. As shown in Table~\ref{fees} below, moving from a perfectly non-fractionalized village to a perfectly fractionalized village is associated with a 600 Rupees increase in annual school fees. Given that the average annual fee for all private schools in the LEAPS survey is 1191 Rupees, this is a very significant amount.\footnote{Fees above the 95th percentile -- 1900 Rupees -- were adjusted down to 1900 Rupees. Without this adjustment, the coefficient on village fractionalization is approximately 950 Rupees with a t-stat of 2.09} 
+
+\input{regressions/fees.tex}
+
+
+Despite offering a much smaller performance premium over government schools in the same village, private schools in ethnically fractionalized villages charge dramatically more than private schools in homogenous villages. As shown in Table~\ref{fees} below, moving from a perfectly non-fractionalized village to a perfectly fractionalized village is associated with a 600 Rupees increase in annual school fees. Given that the average annual fee for all private schools in the LEAPS survey is 1191 Rupees, this is a very significant amount.\footnote{Fees above the 95th percentile -- 1900 Rupees -- were adjusted down to 1900 Rupees. Without this adjustment, the coefficient on village fractionalization is approximately 950 Rupees with a t-stat of 2.09} 
+
+Further, as shown in Table~\ref{privateshare}, none of these changes are driven by a change in the share of students in private schools. The percentage of students in private schools in almost perfectly stable, even when controlling for numerous village characteristics. 
+
+
+\input{regressions/private_share.tex}
+
+Some of the results predicted by this story do not appear in the data, however. For example, this story suggests that the importance of perceived intelligence in school choice should decline with village fractionalization. Table~\ref{hhselectioninteraction} below employs the same specification used in Table~\ref{hhselection}, but with the addition of an interaction term on child intelligence. Regressions are run for all children and separately for high and low status families. 
+
+Interpreting this result is made somewhat difficult by the structure of the LEAPS data. Ideally, these regressions would be run for the full 30,000 children surveyed, but household data is only available for [num] of these children (who come from, at most, 10 households per village). As such, there is reason to believe that this ``non-result'' may reflect the limited quality of the data rather than the accuracy of the sorting story. Nevertheless, the lack of a finding in this setting must be considered when weighing the strength of the evidence here. 
+
+\input{regressions/hhselection_interaction.tex}
+% section sorting (end)
+
+
+\section{Discussion}\label{}
+
+\subsection{Interpretation}\label{}
+
+\subsection{The Sorting Paradox}\label{}
+One question that strikes any reader examining this question is why, if private schools are not actually outperforming government schools, do parents continue to pay for private educations?
+
+There are a number of possible explanations for this. The first is that there is some evidence for neighborhood effects in education, whereby student success is shaped in part by the attitudes and aspirations of other students \citep{Goddard:2003to, Pong:1998ts, Roscigno:2000wt, Jencks:1990tw}. Given that fact, private schools may in fact be superior \emph{simply because they collect the most talented students}. Students full of high achievers are indeed better schools -- so the decision of parents to send their children are entirely rational -- but the reason these schools are better has nothing to do with the school itself.
+
+This possibility is particularly worrisome because of its implications for the students left in government schools. In the absence of ``neighborhood'' effects, the existence of private schools that are no better or worse than government schools has little social impact. If private schools are siphoning off talented students, however, and this has negative network effects on the government school students they leave behind, then private schools may indeed be deleterious.
+
+\cite{Basu:2009uu} offers an alternative, albeit similar explanation:
+\begin{quote}
+	Suppose that one important consideration in choosing a school is to form associations and networks that can help later in life. I am suggesting the kind of consideration that often prompts students in American campuses to join fraternities and sororities. [...] What the children or their parents will be paying for is partly the quality of education, but more importantly, for the quality of associates that students are likely to find in this school.
+\end{quote}
+
+
+\subsection{Limitations}\label{}
+
+
+Want vouchers: \citep{Chakrabarti:2008vc}
+Op-Ed \citep{Kelkar:2006tq}
+book: \citep{Panagariya:2008wi}
+
+
+
+
+\section{External Validity}\label{}
+\input{regressions/india_reading.tex}
+\input{regressions/india_math.tex}
+\section{Conclusion}\label{conclusion}
+The results presented here are unlikely to end the debate over the social value of private schools in Pakistan, but they do provide strong evidence that significant skepticism is warranted when using even extremely high quality observational test score data.
+
+\pagebreak
+
+	\bibliography{/Users/Nick/Dropbox/Dropbox_Documents/my_library}
+	\bibliographystyle{apalike}
+
+\pagebreak
+
+\appendix
+
+
+\section{Biraderi Categorization}\label{biraderis}
+
+[Summary of biraderis here]
+
+
+
+\section{Distance}\label{distance}
+The changing salience of ethnicity is not the only source of variation that can be leveraged to better understanding the contributions of sorting to the government-private school performance differential. Research in Pakistan has shown that there is a strong ``distance gradient'' with respect to school enrollment -- even controlling for other factors, students (especially girls) are much more likely to attend primary school if a school is close to their home. This relationship not only has a strong impact on overall enrollment, but also school choice. As noted in the LEAPS report, ``there is a dramatic 10 percentage points (30\%) increase in the probability of using a private school \emph{regardless of wealth} when the private school is closer than a public school.''\citep[p.96]{Andrabi:2007we}. 
+
+In settings where the distance to the nearest private school differs from the distance to the nearest government school, this ``distance aversion'' can be thought of as an impediment to efficient sorting. Namely, the larger the additional distance a child must travel to attend a private school, the more likely a student with high unobservable academic potential is to attend their nearby government school instead.  
+
+This prediction can be readily tested using data from the LEAPS survey, which includes GPS data on all schools and households in the LEAPS sample. If it is the case that students are sorting according to academic potential, then conditional on being a government school student, there should exist a positive correlation between test scores and the additional distance a child would have to travel to attend a private school. 
+
+This prediction is tested in Table~\ref{distancescores} below. As shown in Column 1, even when controlling for the absolute distance to the nearest private school and other demographic characteristics, there is moderate evidence of a positive correlation between additional distance to a private school and English test scores, although the coefficient is only significant at the 80\% level. (Note that each child enters these regressions twice, so the sample size is effectively only 400 for government students and 150 for private school students.) The coefficient for private schools, however, is not positive, but given the effective sample size of only 150 this is not entirely surprising. 
+
+\input{regressions/distance_scores.tex}
+
+
+\end{document}

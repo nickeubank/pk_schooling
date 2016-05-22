@@ -1,0 +1,54 @@
+\documentclass[Eubank_pk_ethnic_sorting.tex]{subfiles}
+
+
+\begin{document}
+
+Having established that the determinants of school choice vary dramatically between caste-homogeneous and caste-heterogeneous villages in Section~\ref{sorting}, this section now turns to an analysis of how differences in sorting impact the test score gap between government and private schools. If private schools outperform government schools primarily due to differences in the quality of instruction, then the government-private test score gap should be relatively stable across villages with different caste compositions. If, however, private schools outperform government schools primarily due to differences in the composition of their students, then villages that are subject to different sorting processes should also see differences in the government-private differential.
+
+\subsection{Measuring Learning}\label{}
+
+To measure learning, this analysis employs a lagged-value-added model. Lagged-value-added models have increasingly become the norm in the education research \citep{Gordon:2006wt,McCaffrey:2003vk,Hanushek:2003hz} due to their potential to take into account not only observational differences between students, but also the potential to control for some unobserved differences, a subject discussed in more detail below.\footnote{Lagged value-added models also account for the fact that learning is not entirely persistent (things learned in the past are often forgotten). This flexibility is discussed in more detail in Appendix~\ref{appendex_valueadded}.} 
+
+The lagged-value-added model incorporates the assumption that current knowledge is an additive function of all current and past inputs and an i.i.d. stochastic error term, and can be expressed as:
+
+\begin{eqnarray}
+	Y_{i,t}=X_{i,t}\alpha+Y_{i,t-1}\beta + \epsilon_{i,t}\label{primary}
+\end{eqnarray}
+
+where $Y_{i,t}$ is child $i$'s test scores at time $t$ and $X_{t,i}$ is a vector of child, school, and village controls at time $t$ (a full discussion of the lagged-value-added model and its assumptions can be found in Appendix~\ref{appendix_valueadded}). 
+
+Note that while the inclusion of a lagged dependent variable effectively controls for unobserved differences that affect differences in test \emph{levels}, it cannot control for unobserved heterogeneity that affects learning \emph{rates}. It is for this reason that while superior to other available methods, value-added analyses can not fully overcome selection issues.\footnote{Some analysis have turned to second-differencing the data and focusing on students who change schools \citep{Andrabi:2011hl}, but these analyses have their own limitations, among them limited sample sizes (given that changes between types of school are relatively infrequent in most surveys) and the assumption that school changes are not the result of some unobserved shock (i.e. that school switches are not accompanied by contemporaneous with other changes -- a potentially problematic assumption given the relative infrequency with which students change schools).}
+
+This lagged-value-added model of child learning can be leveraged to measure the contribution of various factors to learning. In this analysis, example, village-school type dummies (i.e. one dummy for village 1, private schools, one dummy for village 1, government schools, etc.) are added to these child-year-level regressions to capture the ``value-added'' to children's education by schools of a given type in each village. The difference between the private school and government school dummies in a village constitute a measure of the government-private school test score gap. In addition, fixed-effects for each teacher can also be used to estimate the ``value-added'' of each teacher. 
+
+\subsection{Convergence in Government-Private Test Scores}\label{}
+
+
+Table~\ref{kids} presents lagged-valued-added estimates of learning as a function of various demographic controls and village fractionalization. It shows that the effect of caste fractionalization on the government-private test score gap is negative and significant for English and Urdu, and negative (albeit insignificant) for math. Further, as shown in columns (2), (5), and (8) of Table~\ref{kids}, the inclusion of various demographic controls such as a child wealth index and dummies for parental education along with the village fixed effects has no significant effect on the results. 
+
+\input{../regressions/children.tex}
+
+To aid in interpretation, Figure~\ref{kidscombined} plots the government-private test score gap as a function of caste fractionalization (these plots correspond to columns (2), (5), and (8) respectively). In all three cases, the rise in fractionalization is associated with a near 50\% decline in the private school premium, although this is by far most striking in the case of English -- which is generally considered the path to upward mobility in Pakistan, and is often the focus of private schools in Punjab. 
+
+\begin{figure}[h]
+	\caption{Private School Test Score Premium with Lagged Scores}\label{kidscombined}
+	\centering	
+	\includegraphics[scale=0.8]{../graphs/kids_combined.pdf}
+\end{figure}
+
+
+\subsection{Decomposition of Convergence}\label{}
+
+Further evidence that the convergence in government-private school test scores is driven differences in student sorting -- not differences in actual learning outcomes -- comes from the fact that while the government-private school test gap decreases, overall learning remain relatively unchanged. As shown in Table~\ref{kidsnointeract}, overall test scores are essentially flat across all villages -- English scores are slightly higher in more fractionalized villages in Column 1, but the magnitude of this difference is relatively small, and once more demographic controls are added in Column 2 this effect disappears. No relationship exists for other subjects. Government scores increase and private scores decline with fractionalization, in other words, but those changes are almost perfectly offsetting. Indeed, this is also illustrated in Column 3 of Table~\ref{kids}, where village fixed effects are replaced with district fixed effects, allowing for a comparison of test scores levels (rather than just the government-private gap) across villages. In the case of English the convergence appears to be driven in equal parts by improvements in government schools and a decline in private schools.
+
+\input{../regressions/children_nointeract.tex}
+
+The fact overall educational attainment remains constant is further evidence that as the determinants of school choice changes, it is the \emph{distribution} of academically inclined students that changes, not the performance of the schools themselves. 
+
+It is worth noting here that up to this point, an implicit assumption has underlay the arguments made in this paper. For it to be the case that sorting by caste reduces the degree to which private schools enroll disproportionately academically inclined students, it must be the case that residual academic potential -- potential that cannot be explained by things like parental education and wealth -- must be equally distributed across different castes (or be distributed slightly in favor of lower status \emph{biraderis}). If not, and even the least talented ``high status'' students were more talented than the most talented ``low status'' students, then the concentration of ``high status'' students in private schools would result in \emph{divergence}, rather than \emph{convergence}, of test scores. As shown in Table~\ref{castesarentdumb}, however, there is no evidence that those from higher social status \emph{biraderis} have higher residual talent than those from low status \emph{biraderis}. As evident from the top row of coefficients, after controlling for other observational factors, student caste does not appear to have any consistent effect on test scores. 
+
+\input{../regressions/status.tex}
+
+
+\end{document}
+

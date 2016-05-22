@@ -1,0 +1,21 @@
+*.dta
+*.mdb
+*.ini
+*.kmz
+*.mxd
+
+# Text files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdfsync
+*.synctex.gz
+*.blx.bib
+*.nav
+*.xml
+*.snm
+*.toc
+*.bib
+*.tmproj

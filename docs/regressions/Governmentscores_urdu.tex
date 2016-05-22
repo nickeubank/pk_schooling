@@ -1,0 +1,29 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Government Urdu Scores}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{2}{c}{Grade 3}&\multicolumn{3}{c}{Grade 5}           \\\cmidrule(lr){2-3}\cmidrule(lr){4-6}
+                &\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{No Fixed}&\multicolumn{1}{c}{District Fixed}&\multicolumn{1}{c}{District Fixed}\\
+\midrule
+Nick's Fractionalization&     0.40** &   -0.014   &     0.31** &    0.099   &   0.0054   \\
+                &   (2.17)   &  (-0.06)   &   (2.02)   &   (0.56)   &   (0.04)   \\
+Female          &     0.21***&     0.21***&     0.21***&     0.22***&     0.10***\\
+                &   (3.57)   &   (3.60)   &   (4.45)   &   (4.78)   &   (2.87)   \\
+Educated Parent &    0.068*  &    0.051   &    0.080** &     0.10***&    0.098***\\
+                &   (1.81)   &   (1.36)   &   (2.13)   &   (2.83)   &   (3.40)   \\
+Child Age       &    0.033   &    0.036   &    0.032   &    0.058   &    0.075   \\
+                &   (0.53)   &   (0.56)   &   (0.49)   &   (0.89)   &   (1.52)   \\
+Age Squared     &  -0.0024   &  -0.0019   &  -0.0030   &  -0.0037   &  -0.0048*  \\
+                &  (-0.78)   &  (-0.59)   &  (-0.87)   &  (-1.09)   &  (-1.93)   \\
+Child PCA       &    0.043***&    0.048***&    0.014   &    0.025** &   0.0028   \\
+                &   (3.41)   &   (3.89)   &   (1.36)   &   (2.49)   &   (0.32)   \\
+Lagged Urdu Score&            &            &            &            &     0.47***\\
+                &            &            &            &            &  (24.04)   \\
+\midrule
+Observations    &     3971   &     3971   &     2938   &     2938   &     2938   \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{table}

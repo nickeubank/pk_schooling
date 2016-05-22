@@ -1,0 +1,31 @@
+\begin{sidewaystable}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Private Premium, English Scores}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{Grade 4 Cross}&\multicolumn{5}{c}{Grade 6}                                     \\\cmidrule(lr){2-2}\cmidrule(lr){3-7}
+                &\multicolumn{1}{c}{Big Sample}&\multicolumn{1}{c}{Small Sample}&\multicolumn{1}{c}{Improvement without Lag}&\multicolumn{1}{c}{Large Sample with Lagged}&\multicolumn{1}{c}{Small Sample with Lagged}&\multicolumn{1}{c}{est6}\\
+\midrule
+Private School  &     1.71***&     1.53***&     1.50***&     1.32***&     0.95***&     0.86***\\
+                &   (9.69)   &   (8.81)   &   (5.11)   &   (4.71)   &   (4.01)   &   (3.98)   \\
+Zaat-Private Interaction&    -1.33***&    -1.18***&    -1.24***&    -1.10** &    -0.93***&    -0.88** \\
+                &  (-5.06)   &  (-4.48)   &  (-2.76)   &  (-2.51)   &  (-2.75)   &  (-2.66)   \\
+Female          &     0.30***&     0.25***&     0.22***&     0.19***&     0.17***&     0.13** \\
+                &   (6.68)   &   (6.21)   &   (2.87)   &   (2.74)   &   (2.80)   &   (2.61)   \\
+Child Age       &   -0.077   &   -0.094   &     0.15   &     0.12   &    0.077   &    0.027   \\
+                &  (-1.43)   &  (-1.45)   &   (1.33)   &   (1.04)   &   (0.69)   &   (0.22)   \\
+Age Squared     &   0.0022   &   0.0033   &  -0.0072*  &  -0.0057   &  -0.0045   &  -0.0023   \\
+                &   (0.95)   &   (1.18)   &  (-1.76)   &  (-1.37)   &  (-1.10)   &  (-0.50)   \\
+Child PCA Asset Index computed over all 4 years&            &    0.027***&            &    0.016   &            &  -0.0025   \\
+                &            &   (4.65)   &            &   (1.37)   &            &  (-0.26)   \\
+At least one parent educated beyond elementary&            &     0.12***&            &     0.18***&            &     0.11***\\
+                &            &   (5.87)   &            &   (5.67)   &            &   (3.72)   \\
+L3.English Theta&            &            &            &            &     0.43***&     0.45***\\
+                &            &            &            &            &  (10.59)   &  (17.92)   \\
+\midrule
+Observations    &    17528   &    10854   &     4373   &     3206   &     3126   &     2391   \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{7}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{sidewaystable}

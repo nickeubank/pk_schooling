@@ -1,0 +1,21 @@
+	(1)	(2)
+VARIABLES	avg_change	avg_change
+		
+reportcard	0.002	0.031*
+	(0.590)	(1.807)
+report_interact_frac		-0.038*
+		(-1.716)
+m_num_schools	0.002***	0.002***
+	(3.152)	(2.941)
+m_share_private	0.017	0.018
+	(1.209)	(1.232)
+mauza_wealth	0.000	0.000
+	(0.242)	(0.242)
+M_frac_zaat		0.022
+		(1.409)
+Constant	0.005	-0.011
+	(0.587)	(-0.773)
+Observations	112	112
+R-squared	0.113	0.138
+t statistics in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		
