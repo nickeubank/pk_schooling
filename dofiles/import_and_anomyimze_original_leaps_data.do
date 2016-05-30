@@ -22,7 +22,8 @@ end
 * Import household census with caste information
 use $datadir/household/hhcensus1/hhcensus_short, clear
 
-   drop  s2q2 s3q2  s3q5 school_name
+   * Drop all variables with identifying information
+   drop  s2q2 s3q2  s3q5 school_name s1q7
    check_no_identifying
 
 save $pk/leaps_data/hhcensus.dta, replace

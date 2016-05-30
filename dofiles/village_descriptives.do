@@ -20,6 +20,13 @@ label var M_penrolled "Percent of Children Enrolled"
 label var schools_perhh "Schools per Household"
 label var M_numhh "Number of Households"
 
+* Discovered literacy was miscoded in original data -- flip!
+replace M_literacy = 1 - M_literacy
+
+* Test to ensure now correct
+sum  M_literacy
+assert `r(mean)' < 0.4
+
 gen ln_numhh =ln(M_numhh)
 label var ln_numhh "Log Number of Households"
 
