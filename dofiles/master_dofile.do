@@ -17,10 +17,6 @@ global datadir "/users/nick/projects/leaps/data"
 
 * Import village census
 do $pk/dofiles/import_and_anomyimze_original_leaps_data.do
-<<<<<<< 013791f19bbdc5b75e08fe191a9003ac483577b2
-=======
-qqq
->>>>>>> update master_do
 
 ********
 * Basic cleaning
