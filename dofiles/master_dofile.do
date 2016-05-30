@@ -12,11 +12,11 @@ global pk "/users/nick/projects/pk_schooling/"
 * -- no processing except removing variables not allowed in a public release.
 ******
 
+
 global datadir "/users/nick/projects/leaps/data"
 
 * Import village census
-do dofiles/import_and_anomyimze_original_leaps_data.do
-
+do $pk/dofiles/import_and_anomyimze_original_leaps_data.do
 
 ********
 * Basic cleaning
