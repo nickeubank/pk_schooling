@@ -1,0 +1,26 @@
+
+
+Part Context:
+   - village_frac_by_district.pdf    FOUND / RUNS
+   - village_by_frac.tex             FOUND / RUNS
+
+Part Sorting:
+   - hhselection.tex                 FOUND / DOES NOT RUN
+   - village_toptwo.pdf              FOUND / RUNS
+   - school_toptwo.pdf               FOUND / RUNS
+   - intra_versus_intervillage_frac_combined.pdf  FOUND / RUNS
+   - high_pooling.tex                FOUND / DOES NOT RUN
+   - fees.tex                        FOUND / RUNS
+   - private_share.tex               FOUND / RUNS
+
+Part Scores:
+   - children.tex                    FOUND
+   - kids_combined.pdf               FOUND / needs interact
+   - children_nointeract.tex         FOUND / needs interact
+   - status.tex
+
+Part Alternate Explanations:
+   - absenteeism_and_pay.pdf / compensation_scores.pdf
+   - teachercompensation.tex
+   - private_teachers.tex
+   - government_teachers.tex

@@ -2,7 +2,7 @@ clear
 
 use $datadir/constructed/ethnic_info/raw/mauza_gap, clear
 sort mauzaid 
-merge 1:1 mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge 1:1 mauzaid using $pk/public_leaps_data/public_mauza
 assert _m~=1
 keep if _m==3
 drop _m

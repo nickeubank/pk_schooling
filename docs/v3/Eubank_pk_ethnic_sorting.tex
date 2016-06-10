@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{dcolumn, multirow}
+\usepackage{setspace}
+\usepackage{epsfig, subfigure, subfloat, graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{anysize, indentfirst, setspace}
+\usepackage{verbatim, rotating, paralist}
+\usepackage{pdfsync}
+\usepackage{latexsym}
+\usepackage{amsthm}
+%\usepackage{fullpage}
+\usepackage{longtable}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{mathabx}
+\usepackage{txfonts}
+\usepackage{amsfonts}
+\usepackage{parskip}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{comment}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{subfiles}
+
+\usepackage[capposition=top]{floatrow}
+
+\newcommand{\sym}[1]{\rlap{#1}}% Thanks to David Carlisle
+
+% Allow line breaks with \\ in specialcells
+	\newcommand{\specialcellc}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+	\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+
+
+
+\usepackage[margin=3cm]{geometry}
+
+\title{Decomposing the Government-Private School \\ Performance Differential: \\ Village Ethnic Politics and School Sorting}
+\author{Nicholas Eubank\footnote{\href{mailto:nicholaseubank@stanford.edu}{nicholaseubank@stanford.edu}. This project would not have been possible without the exceptional support numerous parties, including Jishnu Das, Tahir Andrabi, Kate Casey, Neil Malhotra, Meredith Startz, and Paul Novosad.} \\ \emph{Stanford University GSB}}
+
+\date{\today}
+
+% This is the beginning of a real document!
+
+\begin{document}
+\maketitle
+\begin{center}
+\vspace{1.5cm}
+
+{\Large \color{blue}\href{http://www.nickeubank.com/eubank_schoolsorting/}{Click here to download the most recent version of this paper.}\color{black}}
+\vspace{1.5cm}\\
+
+\textbf{PRELIMINARY DRAFT \\ PLEASE DO NOT CITE WITHOUT AUTHOR'S PERMISSION} \\
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{abstract}
+The emergence of rural, secular, affordable private schools across South Asia is one of the most promising developments in the education sector in decades. Yet the question of whether private schools are actually superior to government schools remains unsettled. Observational studies consistently show that private school students outperform government school students even when controlling for demographic characteristics and some unobservable heterogeneity. Nevertheless, it remains unclear whether this is because (a) private schools provide students with a better education, or (b) students attending private schools are more academically inclined in unobservable ways. This paper sheds new light on this question by comparing private school performance in villages where students are known to sort on intelligence with villages where school choice is motivated by caste politics, not academic potential. It finds observational estimates of private school performance fall by half moving from villages with sorting on perceived intelligence to villages without sorting on perceived intelligence, suggesting at least 50\% of the perceived difference between government and private school performance can be explained by differences in student composition, not teaching quality.
+\end{abstract}
+
+\thispagestyle{empty}
+
+
+
+\pagebreak
+
+\setcounter{page}{1}
+
+
+\section{Introduction}\label{pk_intro}
+
+	\subfile{part_introduction.tex}
+
+\section{Study Context}\label{pk_context}
+
+	\subfile{part_context.tex}
+
+\section{Caste Politics and School Sorting}\label{pk_sorting} % Frac (fold)
+
+	\subfile{part_sorting.tex}
+
+
+\section{School Sorting and Test Scores}\label{pk_scores}
+
+	\subfile{part_scores.tex}
+
+
+\section{Alternate Explanations}\label{pk_alternatives}
+
+	\subfile{part_alternatives.tex}
+
+\section{Discussion and Policy Implications}\label{pk_conclusion}
+
+	\subfile{part_conclusion.tex}
+
+
+
+\pagebreak
+
+	\bibliography{/Users/Nick/Documents/my_library}
+	\bibliographystyle{apalike}
+
+\appendix
+
+\section{Value-Added Test Scores}\label{appendix_valueadded}
+
+	\subfile{appendix_valueadded.tex}
+\clearpage
+\section{Biraderi Classification}\label{appendix_classification}
+
+	\subfile{appendix_classification.tex}
+
+
+
+\end{document}

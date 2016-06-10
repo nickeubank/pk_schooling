@@ -24,7 +24,7 @@ clear
 *replace zaat_code= 22 if zaat=="SYED"
 
 set more off
-use $datadir/constructed/ethnic_info/raw/mauza_zaat_vars, clear
+use $pk/public_leaps_data/public_mauza, clear
 
 * scatter mauzaid mauza_zaat_frac, mlabel(mauzaid)
 
@@ -38,7 +38,7 @@ use $datadir/constructed/ethnic_info/raw/mauza_zaat_vars, clear
 	* br if mauzaid==7
 					* 80% #4 (Awan), others scattered. 
 
-use $datadir/school/generalschool2/generalschool2, clear
+use $pk/public_leaps_data/school/school2/generalschool2, clear
 	keep if mauzaid==5
 	gen school_private=(gs2_s0q5_type==1)	
 	keep school_private gs2_s4*	
@@ -69,7 +69,7 @@ use $datadir/school/generalschool2/generalschool2, clear
 *******************
 * School type by caste
 *******************
-use $datadir/school/generalschool2/generalschool2, clear
+use $pk/public_leaps_data/school/school2/generalschool2, clear
 
 
 gen school_private=(gs2_s0q5_type==1)	
@@ -149,7 +149,7 @@ sort mauzaid
 tempfile share
 save `share'
 
-use $datadir/constructed/ethnic_info/raw/mauza_zaat_vars, clear
+use $pk/public_leaps_data/public_mauza, clear
 sort mauzaid
 merge mauzaid using `share'
 tab _m

@@ -4,10 +4,10 @@ set more off
 *******************
 * School type by caste
 *******************
-use $datadir/school/generalschool2/generalschool2, clear
+use $pk/public_leaps_data/school/school2/generalschool2, clear
 
 sort mauzaid
-merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge mauzaid using $pk/public_leaps_data/public_mauza
 tab _m
 keep if _m==3
 drop _m 

@@ -1006,5 +1006,5 @@ rename share_in_toptwo mauza_share_in_toptwo
 
 keep mauzaid mauza_zaat_frac mauza_zaat_polar mauza_zaat_share* zfrac*  num_greater mauza_share_in_toptwo district
 sort mauzaid
-save $datadir/constructed/ethnic_info/raw/mauza_zaat_vars, replace
+save $pk/public_leaps_data/public_mauza, replace
 

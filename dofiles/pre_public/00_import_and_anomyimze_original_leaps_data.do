@@ -61,7 +61,7 @@ use $datadir/constructed/hh_panel/hh_panel_long, clear
    drop hh_gps_north hh_gps_east hh_gps_problem hh_gps_problem_comment mem_name
    check_no_identifying
 
-save $pk/public_leaps_data/public_hh_panel_long, replace
+save $pk/public_leaps_data/public_hh_panel_long.dta, replace
 
 
 

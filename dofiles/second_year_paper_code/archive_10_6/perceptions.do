@@ -86,7 +86,7 @@ save `school'
 	
 	* Get mauza frac
 	sort mauzaid
-	merge m:1 mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+	merge m:1 mauzaid using $pk/public_leaps_data/public_mauza
 	assert _m~=1
 	drop if _m==2
 	drop _m

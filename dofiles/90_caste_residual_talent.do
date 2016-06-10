@@ -9,14 +9,14 @@
 * Now look at child changes from 1 to 4.
 * ************
 
-use $datadir/constructed/child_panel/child_panel_long, clear
-
+use $pk/public_leaps_data/public_child_panel_long, clear
+set more off
 
 
 drop mauza_frac_zaat
 sort mauzaid
 count
-merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge mauzaid using $pk/public_leaps_data/public_mauza
 assert _m~=1
 tab _m
 keep if _m==3
@@ -36,8 +36,6 @@ count
 	gen interact_zaat_private=mauza_zaat_frac*school_private
 	label var interact_zaat_private "Fractionalization * Private"
 	label var mauza_wealth "Median Village Expenditure"
-	gen ln_numhh=ln(mauza_numhh)
-	label var ln_numhh "Log Village Size"
 
 	foreach x in math urdu english {
 		local name=proper("`x'")
@@ -60,7 +58,7 @@ count
 
 * Get caste
 preserve
-use  $datadir/household/hhsurvey1/hhsurvey1_household, clear
+use  $pk/public_leaps_data/household/hhsurvey1/public_hhsurvey1_household, clear
 keep hhid hm1_s0q8_zaat
 sort hhid
 tempfile caste
@@ -104,10 +102,7 @@ drop _merge
 
 	label var status2 "High Status Biraderi"
 
-	
-	* Status table
-	qqq
-	
+
 		capture eststo clear
 
 	foreach x in english urdu math {
@@ -133,7 +128,7 @@ drop _merge
 }
 
 
-		esttab  using $pk/docs/regressions/status.tex, b(a2) replace nogaps compress label booktabs noconstant ///
+		esttab  using $pk/docs/results/status.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 			mgroups("English" "Urdu" "Math" , pattern(0 0 0  1 0 0  1 0  0  ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 			mtitle( "" "" "" "" "" "" "" "" "" ) title(Child Social Status and Residual Talent\label{castesarentdumb}) ///
 			 drop( "o.*" "child_age" "child_age2" "child_female" "class_*") ///
@@ -141,6 +136,3 @@ drop _merge
 			indicate( "Village Fixed Effects=_Ima*" "District Fixed Effects=_Id*") ///
 			starlevels(* 0.10 ** 0.05 *** 0.01) ///
 			note(Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.)
-
-
-qqq

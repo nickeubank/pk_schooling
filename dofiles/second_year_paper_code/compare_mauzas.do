@@ -10,7 +10,7 @@ gen schools_perhh_p=(M_numschools_private)/M_numhh
 
 
 sort mauzaid
-merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge mauzaid using $pk/public_leaps_data/public_mauza
 tab _m
 keep if _m==3
 

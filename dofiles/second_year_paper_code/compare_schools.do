@@ -5,7 +5,7 @@ use $datadir/constructed/school_panel/school_panel_long, clear
 
 sort mauzaid
 
-merge m:1 mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge m:1 mauzaid using $pk/public_leaps_data/public_mauza
 
 keep if _m==3
 drop _m

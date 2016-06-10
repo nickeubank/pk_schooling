@@ -13,6 +13,7 @@ sort mauzaid
 merge 1:m mauzaid using $pk/prepublic_data/from_hhcensus.dta
 tab _m
 keep if _m==3
+drop _m
 
 label var M_wealth "Median Montly Expenditures"
 label var M_literacy "Adult Literacy Rate"
@@ -26,6 +27,7 @@ label var ln_numhh "Log Number of Households"
 
 duplicates report mauzaid
 assert `r(N)' == `r(unique_value)'
+sort mauzaid
 save $pk/public_leaps_data/public_mauza.dta, replace
 
 

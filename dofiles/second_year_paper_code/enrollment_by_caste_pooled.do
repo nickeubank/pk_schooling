@@ -2,13 +2,13 @@ clear
 set more off
 
 
-use $datadir/school/generalschool2/generalschool2, clear
+use $pk/public_leaps_data/school/school2/generalschool2, clear
 
 
 * Get village caste
 
 sort mauzaid
-merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge mauzaid using $pk/public_leaps_data/public_mauza
 
 keep if _m==3
 

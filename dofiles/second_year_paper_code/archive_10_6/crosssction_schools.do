@@ -4,7 +4,7 @@
 * **************
 
 	* Get fees
-		use $datadir/school/generalschool1/generalschool1, clear
+		use $pk/public_leaps_data/school/school1/generalschool1, clear
 		
 		keep mauzaid schoolid gs1_s14q1 gs1_s13q1_1to3 gs1_s13q2_1to3 gs1_s0q5_type
 		recode gs1_s13q1_1to3 gs1_s13q2_1to3 (.=0)
@@ -49,7 +49,7 @@
 
 	* Bring in mauza vars
 	sort mauzaid
-	merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+	merge mauzaid using $pk/public_leaps_data/public_mauza
 	keep if _m==3
 	
 	* THIS I SHOULD FIX!!!!!

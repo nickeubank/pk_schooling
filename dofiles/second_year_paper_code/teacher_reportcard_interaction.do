@@ -17,7 +17,7 @@ codebook mauzaid
 
 
 sort mauzaid
-merge m:1 mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge m:1 mauzaid using $pk/public_leaps_data/public_mauza
 
 tab _merge
 keep if _merge==3

@@ -7,7 +7,7 @@ use $datadir/constructed/child_panel/child_panel_long, clear
 drop mauza_frac_zaat
 sort mauzaid
 count
-merge mauzaid using $datadir/constructed/ethnic_info/raw/mauza_zaat_vars
+merge mauzaid using $pk/public_leaps_data/public_mauza
 assert _m~=1
 tab _m
 keep if _m==3
