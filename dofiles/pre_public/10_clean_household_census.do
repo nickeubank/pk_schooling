@@ -1,6 +1,6 @@
 
-
-use $pk/leaps_data/hhcensus.dta
+set more off
+use $pk/prepublic_data/hhcensus.dta
 
 
 
@@ -9,8 +9,13 @@ rename s1q11 zaat
 replace zaat=subinstr(zaat, ",", "", .)
 replace zaat=subinstr(zaat, ".", "", .)
 replace zaat=subinstr(zaat, "]", "", .)
+
 replace zaat=subinstr(zaat, "'", "", .)
-replace zaat=subinstr(zaat, "`", "", .)
+replace zaat=subinstr(zaat, "'", "", .)
+
+replace zaat=subinstr(zaat, "`", "", .) 
+replace zaat=subinstr(zaat, "'", "", .) 
+
 replace zaat=subinstr(zaat, ";", "", .)
 replace zaat=trim(zaat)
 replace zaat=upper(zaat)
@@ -988,8 +993,6 @@ drop temp_* *_temp
 
 
 
-
-
 * Make some terciles
 xtile zfrac3=mauza_zaat_frac, n(3)
 xtile zfrac4=mauza_zaat_frac, n(4)
@@ -1008,4 +1011,4 @@ rename share_in_toptwo mauza_share_in_toptwo
 keep mauzaid mauza_zaat_frac mauza_zaat_polar mauza_zaat_share* zfrac*  num_greater mauza_share_in_toptwo district
 sort mauzaid
 
-save $pk/leaps_data/hhcensus_clean.dta
+save $pk/prepublic_data/from_hhcensus.dta

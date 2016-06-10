@@ -20,7 +20,7 @@ set more off
 
 use $datadir/constructed/child_panel/child_panel_long, clear
 
-
+qqq
 
 drop mauza_frac_zaat
 sort mauzaid
