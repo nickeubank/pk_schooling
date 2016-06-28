@@ -9,7 +9,7 @@
 * Now look at child changes from 1 to 4.
 * ************
 
-use $pk/public_leaps_data/public_child_panel_long, clear
+use $pk/public_leaps_data/panels/public_child_panel_long, clear
 set more off
 
 
@@ -131,8 +131,10 @@ drop _merge
 		esttab  using $pk/docs/results/status.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 			mgroups("English" "Urdu" "Math" , pattern(0 0 0  1 0 0  1 0  0  ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 			mtitle( "" "" "" "" "" "" "" "" "" ) title(Child Social Status and Residual Talent\label{castesarentdumb}) ///
-			 drop( "o.*" "child_age" "child_age2" "child_female" "class_*") ///
+			 drop(  "child_age" "child_age2" "child_female" "class_*") ///
 			 substitute({table} {sidewaystable})  ///
 			indicate( "Village Fixed Effects=_Ima*" "District Fixed Effects=_Id*") ///
-			starlevels(* 0.10 ** 0.05 *** 0.01) ///
-			note(Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.)
+			starlevels(* 0.10 ** 0.05 *** 0.01)
+
+
+			*note(Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.)

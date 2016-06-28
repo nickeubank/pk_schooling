@@ -1,0 +1,44 @@
+\begin{sidewaystable}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Child Test Scores\label{kids}}
+\begin{tabular}{l*{9}{c}}
+\toprule
+                &\multicolumn{3}{c}{English}           &\multicolumn{3}{c}{Urdu}              &\multicolumn{3}{c}{Math}              \\\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}\\
+                &\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{}\\
+\midrule
+Private School  &     0.63***&     0.60***&     0.59***&     0.27***&     0.26***&     0.20***&     0.19*  &     0.19*  &     0.12   \\
+                &   (8.35)   &   (7.28)   &   (7.31)   &   (4.16)   &   (4.01)   &   (2.93)   &   (1.67)   &   (1.88)   &   (1.25)   \\
+Fractionalization * Private&    -0.43***&    -0.41***&    -0.42***&    -0.17*  &    -0.17*  &   -0.094   &   -0.082   &    -0.12   &   -0.052   \\
+                &  (-3.77)   &  (-3.46)   &  (-3.68)   &  (-1.71)   &  (-1.74)   &  (-0.98)   &  (-0.53)   &  (-0.83)   &  (-0.39)   \\
+Lagged English Scores&     0.37***&     0.36***&     0.39***&     0.15***&     0.14***&     0.14***&     0.16***&     0.15***&     0.16***\\
+                &  (21.16)   &  (20.03)   &  (20.61)   &  (13.05)   &  (11.37)   &  (11.69)   &  (10.78)   &  (10.06)   &   (9.86)   \\
+Lagged Math Scores&    0.069***&    0.072***&    0.071***&     0.12***&     0.12***&     0.12***&     0.37***&     0.38***&     0.40***\\
+                &   (8.55)   &   (8.91)   &   (8.49)   &  (14.10)   &  (13.51)   &  (13.96)   &  (29.56)   &  (27.37)   &  (28.76)   \\
+Lagged Urdu Scores&     0.15***&     0.15***&     0.15***&     0.38***&     0.38***&     0.40***&     0.23***&     0.22***&     0.22***\\
+                &  (14.04)   &  (13.28)   &  (12.71)   &  (34.36)   &  (32.65)   &  (31.74)   &  (17.67)   &  (17.01)   &  (16.84)   \\
+filler          &            &        0   &            &            &        0   &            &            &        0   &            \\
+                &            &        .   &            &            &        .   &            &            &        .   &            \\
+Child's Wealth Index&            &    0.017***&    0.015***&            &   0.0073** &   0.0068** &            &    0.014***&    0.016***\\
+                &            &   (5.19)   &   (4.29)   &            &   (2.46)   &   (2.28)   &            &   (3.52)   &   (3.73)   \\
+Educated Parent &            &    0.058***&    0.053***&            &    0.052***&    0.049***&            &    0.046***&    0.043***\\
+                &            &   (4.75)   &   (4.07)   &            &   (4.77)   &   (4.40)   &            &   (3.35)   &   (3.08)   \\
+Biraderi Fractionalization&            &            &     0.21** &            &            &    0.095   &            &            &     0.14   \\
+                &            &            &   (2.56)   &            &            &   (1.40)   &            &            &   (1.38)   \\
+Village: Pct Adults Literate&            &            &  0.00017   &            &            & -0.00054   &            &            &  0.00036   \\
+                &            &            &   (0.18)   &            &            &  (-0.62)   &            &            &   (0.27)   \\
+Log Number of Households&            &            &    0.019   &            &            &    0.014   &            &            &   0.0088   \\
+                &            &            &   (1.47)   &            &            &   (1.01)   &            &            &   (0.50)   \\
+Village Land Gini&            &            &    0.053   &            &            &    0.061   &            &            &    -0.25*  \\
+                &            &            &   (0.47)   &            &            &   (0.63)   &            &            &  (-1.88)   \\
+Constant        &     0.25   &    0.067   &     0.13   &     0.56** &     0.58   &     0.60   &     0.12   &     0.74   &     0.89   \\
+                &   (0.99)   &        .   &        .   &   (2.58)   &        .   &        .   &   (0.37)   &   (0.00)   &   (0.00)   \\
+Village Fixed Effects&      Yes   &      Yes   &       No   &      Yes   &      Yes   &       No   &      Yes   &      Yes   &       No   \\
+District Fixed Effects&       No   &       No   &      Yes   &       No   &       No   &      Yes   &       No   &       No   &      Yes   \\
+\midrule
+Observations    &    37147   &    26141   &    26141   &    37147   &    26141   &    26141   &    37147   &    26141   &    26141   \\
+\bottomrule
+\multicolumn{10}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{10}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\end{tabular}
+\end{sidewaystable}

@@ -24,7 +24,7 @@ set more off
 * Now look at child changes from 1 to 4.
 * ************
 
-use $pk/public_leaps_data/public_child_panel_long, clear
+use $pk/public_leaps_data/panels/public_child_panel_long, clear
 
 
 
@@ -258,7 +258,7 @@ local upper_x=proper("`x'")
 
 	}
 
-		esttab  using $pk/docs/regressions/twoyear.tex, b(a2) replace nogaps compress label booktabs noconstant ///
+		esttab  using $pk/docs/results/twoyear.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 			mgroups("English" "Urdu" "Math" , pattern(0 0 0 1 0 0 1 0 0  ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 			mtitle( "" "" "" "" "" "" "" "" "" ) title(Scores at Class 4\label{wlags}) ///
 			nonumber substitute({table} {sidewaystable})  ///
@@ -357,7 +357,7 @@ eststo:	xi: reg child_`x'_theta school_private mauza_zaat_frac interact_zaat_pri
 
 restore
 
-esttab  using $pk/docs/regressions/separate_drivers.tex, b(a2) replace nogaps compress label booktabs noconstant ///
+esttab  using $pk/docs/results/separate_drivers.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 	indicate(District Dummies=_Idis*) title("Separating Drivers") ///
 	mtitle("Urdu" "English" "Math") ///
 	starlevels(* 0.10 ** 0.05 *** 0.01)
@@ -404,6 +404,7 @@ xi: areg child_`x'_theta child_female child_age child_age2 child_pca child_paren
 keep if reportcard==0  & child_surveypanel==1
 keep if (child_panel==1 & (round==1|round==2))| (child_panel==2 & (round==3|round==4))
 
+sort  childcode round
 xi: areg child_math_theta school_private interact_zaat_private child_female  child_age child_age2  child_pca child_parentedu if L.child_math_theta~=., cluster(mauzaid) a(mauzaid)
 
 

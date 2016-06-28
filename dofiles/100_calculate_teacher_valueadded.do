@@ -1,11 +1,11 @@
 clear
-clear matrix 
-clear mata 
+clear matrix
+clear mata
 
 set maxvar 30000
 
 
-use $datadir/constructed/child_panel/child_panel_long, clear
+use $pk/public_leaps_data/panels/public_child_panel_long, clear
 
 * drop if reportcard==1
 set more off
@@ -23,7 +23,7 @@ drop if num<=10
 drop if child_english_theta==.
 
 
-sort childcode round 
+sort childcode round
 * ********************
 * Make a few vars
 * ********************
@@ -47,11 +47,11 @@ set matsize 2000
 
 foreach x in english math urdu {
 	xi: reg child_`x'_theta L.child_math_theta L.child_urdu_theta L.child_english_theta child_parentedu child_pca child_age child_age2 t_* i.district i.child_class, cluster(childcode)
-	
+
 	foreach teacher in `codes' {
 		gen valueadded_`x'_`teacher'= _b[t_`teacher']
 		replace valueadded_`x'_`teacher'= . if valueadded_`x'_`teacher'==0
-	
+
 	}
 }
 
@@ -69,7 +69,5 @@ reshape long valueadded_math_ valueadded_english_ valueadded_urdu_ , i(id) j(tea
 renvars valueadded_*_, postdrop(1)
 drop id
 
-sort teachercode 
-save $datadir/constructed/ethnic_info/raw/valueadded_teacher, replace
-
-
+sort teachercode
+save $pk/constructed_data/teacher_value_added_scores, replace

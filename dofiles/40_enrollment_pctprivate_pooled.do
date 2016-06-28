@@ -85,5 +85,4 @@ eststo: xi:reg pct_high school_private mauza_zaat_frac interact_zaat_private i.m
 esttab  using $pk/docs/results/high_pooling.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 	mtitle( "Pct of Students High Status" "Pct of Students High Status" ) title(Student Body Social Composition\label{highpooling}) ///
 	indicate( "District Fixed Effects=_Id*" "Village Fixed Effects=_Ima*")  ///
-	drop(o.*) ///
-	starlevels(* 0.10 ** 0.05 *** 0.01) ///
+	starlevels(* 0.10 ** 0.05 *** 0.01)

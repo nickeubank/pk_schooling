@@ -7,7 +7,7 @@
 
 global pk "/users/nick/projects/pk_schooling/"
 global datadir "/users/nick/projects/leaps/data"
-QQQ
+qq
 ******
 * Import and anonymize original LEAPS data
 * -- no processing except removing variables not allowed in a public release.
@@ -67,6 +67,5 @@ do $pk/dofiles/60_crosssection_child_descriptives.do   // HAS PROBLEMS BUT ALSO 
 do $pk/dofiles/80_master_kids.do   // wants interact
 
 
-do $pk/dofiles/90_caste_residual_talent.do   
+do $pk/dofiles/90_caste_residual_talent.do
 	* Esttab syntax error
-
