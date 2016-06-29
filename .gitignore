@@ -19,3 +19,5 @@
 *.toc
 *.bib
 *.tmproj
+*.fls
+*.fdb_*
