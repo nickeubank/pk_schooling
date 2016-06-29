@@ -43,7 +43,7 @@ use $datadir/constructed/child_panel/child_panel_long, clear
 		household_gps_north household_gps_east household_gps_problem ///
 		household_gps_problem_comment household_childname1
    check_no_identifying
-save $pk/public_leaps_data/public_child_panel_long.dta, replace
+save $pk/public_leaps_data/panels/public_child_panel_long.dta, replace
 
 * School panel
 use $datadir/constructed/school_panel/school_panel_long, clear
@@ -53,7 +53,7 @@ use $datadir/constructed/school_panel/school_panel_long, clear
    check_no_identifying
    label var district "district name"
 
-save $pk/public_leaps_data/public_school_panel_long.dta, replace
+save $pk/public_leaps_data/panels/public_school_panel_long.dta, replace
 
 * Household panel
 use $datadir/constructed/hh_panel/hh_panel_long, clear
@@ -61,9 +61,11 @@ use $datadir/constructed/hh_panel/hh_panel_long, clear
    drop hh_gps_north hh_gps_east hh_gps_problem hh_gps_problem_comment mem_name
    check_no_identifying
 
-save $pk/public_leaps_data/public_hh_panel_long.dta, replace
+save $pk/public_leaps_data/panels/public_hh_panel_long.dta, replace
 
 
 
-
-
+* Teacher panel
+use $datadir/constructed/teacher_panel/teacher_panel_long, clear
+   check_no_identifying
+save $pk/public_leaps_data/panels/public_teacher_panel_long.dta, replace

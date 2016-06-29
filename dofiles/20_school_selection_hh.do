@@ -80,8 +80,8 @@ gen ln_hh=ln(M_numhh)
 
 label var above "Mom Reports Child Above Average Intelligence"
 label var mom_haseduc "Mom Has Some Schooling"
-label var dad_haseduc "Mom Has Some Schooling"
-label var hh_pca_4years "Log Month Expenditure"
+label var dad_haseduc "Dad Has Some Schooling"
+label var hh_pca_4years "PCA Wealth Index"
 label var age "Age"
 label var age2 "Age Squared"
 label var female "Female"

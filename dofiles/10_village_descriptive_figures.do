@@ -33,20 +33,3 @@ matrix colnames results="Median_Expend" "Adult_Lit_Rate" "Pct_Enrollment" "Schoo
 
 outtable using $pk/docs/results/village_summary, mat(results)  replace clabel(vsummary) format(%9.2g) caption(Village Summary Statistics)
 
-/*
-* Now demean
-foreach x in M_wealth M_literacy M_penrolled schools_perhh M_numhh {
-	gen `x'_de=.
-	forvalues z=1/3 {
-		sum `x' if district==`z'
-		replace `x'_de=`x'-r(mean) if district==`z'
-	}
-}
-
-tabstat  M_wealth_de M_literacy_de M_penrolled_de schools_perhh_de M_numhh_de, by(zfrac3) save format(%9.2g)
-matrix define results=r(Stat3)\r(Stat2)\r(Stat1)\r(Stat5)\(r(StatTotal)
-matrix rownames results= "Highest_Frac" "Moderate_Frac" "Lowest_Fract" "All"
-matrix colnames results="Median_Expend" "Adult_Lit_Rate" "Pct_Enrollment" "Schools_per_HH"  "Num_Households"
-
-outtable using $pk/docs/results/village_summary_demeaned, mat(results) caption("Summary Statistics, After Subtracting District Averages") replace clabel(vsummarydemeaned) format(%9.2g)
-

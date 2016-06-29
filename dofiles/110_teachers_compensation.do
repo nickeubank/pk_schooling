@@ -1,12 +1,12 @@
 clear
 set more off
 
-use $pk/public_leaps_data/panels/teacher_panel_long, clear
+use $pk/public_leaps_data/panels/public_teacher_panel_long, clear
 rename roster_mauzaid mauzaid
 drop if school_private==.|mauzaid==.
 duplicates drop teachercode, force
 sort teachercode
-merge 1:1 teachercode using $datadir/constructed/ethnic_info/raw/valueadded_teacher
+merge 1:1 teachercode using $pk/constructed_data/teacher_value_added_scores
 tab _m
 drop _m
 
@@ -21,16 +21,10 @@ keep if _m==3
 drop _m
 
 
-sort mauzaid
-merge m:1 mauzaid using $datadir/constructed/xvars/mauza_xvars
-
-tab _m
-keep if _m==3
-drop _m
 
 * Get report card
 sort mauzaid
-merge m:1 mauzaid using $datadir/master/mauzas
+merge m:1 mauzaid using $pk/public_leaps_data/public_mauza
 assert _m~=1
 tab _m
 
@@ -45,7 +39,7 @@ capture drop num_students
 
 * Get number of kids
 preserve
-	use $datadir/constructed/child_panel/child_panel_long, clear
+	use $pk/public_leaps_data/panels/public_child_panel_long, clear
 
 
 	egen oneobstag1=tag(childcode child_teachercode)
@@ -129,12 +123,14 @@ eststo: xi: reg avg_salary  avg_valueadded mauza_zaat_frac va_interact avg_absen
 
 
 
-esttab  using $pk/docs/regressions/teachercompensation.tex, b(a2) replace nogaps compress label booktabs noconstant ///
+esttab  using $pk/docs/results/teachercompensation.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 	mgroups("Private Teachers" "Government Teachers" , pattern( 0 0   1 0     ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 	mtitle( "Log Salary" "Log Salary" "Log Salary" "Log Salary" ) title(Village Fractionalization and Teacher Compensation\label{teachercompensation}) ///
 		indicate( "District Fixed Effects=_Id*") ///
-	starlevels(* 0.10 ** 0.05 *** 0.01) drop("o.*" "exp*" "educ*") ///
-	note(\specialcell{Controls for Experience and Teacher Education excluded from table.\\Robust t-statistics clustered at the village level in parenthesis})
+	starlevels(* 0.10 ** 0.05 *** 0.01) drop( "exp*" "educ*")
+
+
+* note(\specialcell{Controls for Experience and Teacher Education excluded from table.\\Robust t-statistics clustered at the village level in parenthesis})
 
 qqq
 

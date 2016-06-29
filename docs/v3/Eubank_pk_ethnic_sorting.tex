@@ -18,6 +18,7 @@
 \usepackage{txfonts}
 \usepackage{amsfonts}
 \usepackage{parskip}
+\usepackage{booktabs}
 \usepackage{stmaryrd}
 \usepackage{mathrsfs}
 \usepackage{dsfont}
@@ -33,10 +34,9 @@
 \newcommand{\sym}[1]{\rlap{#1}}% Thanks to David Carlisle
 
 % Allow line breaks with \\ in specialcells
-	\newcommand{\specialcellc}[2][c]{%
-	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-	\newcommand{\specialcell}[2][c]{%
-	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+	\newcommand{\specialcellc}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+	
+	\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
 
 
 
@@ -64,7 +64,7 @@
 \vspace{0.5cm}
 
 \begin{abstract}
-The emergence of rural, secular, affordable private schools across South Asia is one of the most promising developments in the education sector in decades. Yet the question of whether private schools are actually superior to government schools remains unsettled. Observational studies consistently show that private school students outperform government school students even when controlling for demographic characteristics and some unobservable heterogeneity. Nevertheless, it remains unclear whether this is because (a) private schools provide students with a better education, or (b) students attending private schools are more academically inclined in unobservable ways. This paper sheds new light on this question by comparing private school performance in villages where students are known to sort on intelligence with villages where school choice is motivated by caste politics, not academic potential. It finds observational estimates of private school performance fall by half moving from villages with sorting on perceived intelligence to villages without sorting on perceived intelligence, suggesting at least 50\% of the perceived difference between government and private school performance can be explained by differences in student composition, not teaching quality.
+The emergence of rural, secular, affordable private schools across South Asia is one of the most promising developments in the education sector in decades. Yet the question of whether private schools are actually superior to government schools remains unsettled. Observational studies consistently show that private school students outperform government school students even when controlling for demographic characteristics and some unobservable heterogeneity. Nevertheless, it remains unclear whether this is because (a) private schools provide students with a better education, or (b) students attending private schools are more academically inclined in unobservable ways. Using data from the Learning and Educational Attainment in Pakistan Schools (LEAPS) survey, this paper sheds new light on this question by comparing private school performance in villages where students are known to sort on intelligence with villages where school choice is motivated by caste politics, not academic potential. It finds observational estimates of private school performance fall by half moving from villages with sorting on perceived intelligence to villages without sorting on perceived intelligence, suggesting at least 50\% of the perceived difference between government and private school performance can be explained by differences in student composition, not teaching quality.
 \end{abstract}
 
 \thispagestyle{empty}
@@ -101,8 +101,6 @@ The emergence of rural, secular, affordable private schools across South Asia is
 \section{Discussion and Policy Implications}\label{pk_conclusion}
 
 	\subfile{part_conclusion.tex}
-
-
 
 \pagebreak
 
