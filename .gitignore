@@ -21,3 +21,5 @@
 *.tmproj
 *.fls
 *.fdb_*
+
+*sublime2stata.do
