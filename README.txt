@@ -7,7 +7,7 @@ Several components of this analysis require matsize to be set above 800 (for exa
 
 # Required stata packages:
    - `lookfor` (findit lookfor)
-
+- rowsort
 
 # Adding .ado files
 In addition to packages one can install, this codes also make use of two included
