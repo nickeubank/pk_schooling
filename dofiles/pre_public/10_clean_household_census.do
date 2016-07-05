@@ -846,6 +846,7 @@ drop mauza_zaat_frac_others mauza_zaat_frac_all
 sum zaat_code
 local num_zaats = `r(max)'
 
+
 forvalues z = 1 / `num_zaats' {
 	gen temp_`z' = M_zaat_numhh / M_numhh if zaat_code == `z'
 	bysort mauzaid: egen mauza_share_zaat_`z' = max(temp_`z')
@@ -856,18 +857,28 @@ forvalues z = 1 / `num_zaats' {
 
 duplicates drop mauzaid, force
 
-egen temp_max=rowmax(mauza_share_zaat_*)
+* Get share in top two. Stupid convoluted because of troubles with row-ops in Stata.  
 
+sum zaat_code
+local num_zaats = `r(max)'
+
+egen t_1 = rowmax(mauza_share_zaat_*)
+
+gen to_drop = .
 forvalues x = 1 / `num_zaats' {
-	gen mauza_zaat_share`x'_temp = mauza_share_zaat_`x'
-	replace mauza_zaat_share`x'_temp = . if mauza_share_zaat_`x' == temp_max
+	replace to_drop = `x' if (mauza_share_zaat_`x' == t_1) & (to_drop == .)
 }
 
-egen temp_second=rowmax(mauza_zaat_share*_temp)
+forvalues x = 1 / `num_zaats' {
+	replace mauza_share_zaat_`x' = . if (to_drop == `x')
+}
 
-gen share_in_toptwo=temp_max+temp_second
-drop temp_* *_temp
+egen t_2 = rowmax(mauza_share_zaat_*)
 
+assert t_1 >= t_2
+
+gen share_in_toptwo = t_1 + t_2
+drop to_drop t_1 t_2 mauza_share_zaat_*
 
 **********
 * Clean up a little
