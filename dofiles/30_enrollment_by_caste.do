@@ -11,7 +11,7 @@ sort mauzaid
 merge mauzaid using $pk/public_leaps_data/public_mauza
 
 keep if _m==3
-qqq
+
 
 	* ****************
 	* Number from first two groups:
