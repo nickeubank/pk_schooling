@@ -290,7 +290,7 @@ forvalues x = 1/6 {
 		replace zaat_string="SHEIKH" if zaat_string == "SHIEKH"
 		replace zaat_string="SOLANGI" if zaat_string == "SOLANGI"
 
-	do $pk/dofiles/10_build_datasets_for_analysis/encode_zaat_status.do  zaat_string 
+	do $pk/dofiles/encode_zaat_status.do  zaat_string 
     // takes a string and gives back "zaat_high_status var. "
     // I do a lot so put in one file so changes always propogate everywhere. 
     rename zaat_high_status zaat_high_status`x' 

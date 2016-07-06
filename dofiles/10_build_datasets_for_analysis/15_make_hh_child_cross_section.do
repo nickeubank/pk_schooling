@@ -195,7 +195,7 @@ tab hm1_s0q8_zaat, nol
 decode hm1_s0q8_zaat, gen(caste_string)
 
 
-do $pk/dofiles/10_build_datasets_for_analysis/encode_zaat_status.do  caste_string 
+do $pk/dofiles/encode_zaat_status.do  caste_string 
    // takes a string and gives back "zaat_high_status var. "
    // I do a lot so put in one file so changes always propogate everywhere. 
 

@@ -19,39 +19,7 @@ set more off
 
 
 
-
-* ************
-* Now look at child changes from 1 to 4.
-* ************
-
-use $pk/public_leaps_data/panels/public_child_panel_long, clear
-
-
-
-drop mauza_frac_zaat
-sort mauzaid
-count
-merge mauzaid using $pk/public_leaps_data/public_mauza
-assert _m~=1
-tab _m
-keep if _m==3
-count
-
-
-	* keep if child_panel==1
-
-	tsset childcode round
-
-
-
-
-	* Make "change"
-	rename child_pca_4years child_pca
-	gen child_age2=child_age^2
-	label var child_age2 "Age Squared"
-	label var child_pca "Child's Wealth Index"
-	label var child_parentedu "Educated Parent"
-
+use $pk/constructed_data/custom_child_panel, replace
 
 	* ********
 	* Enrollment by Frac
@@ -89,9 +57,8 @@ count
 
 
 * ********
-* Private Premium
+* Private Premium 
 * ********
-	gen interact_zaat_private=school_private*mauza_zaat_frac
 	label var interact_zaat_private "Zaat-Private Interaction"
 	label var mauza_zaat_frac "Village Fractionalization"
 	label var school_private "Private School"
@@ -380,12 +347,6 @@ gen zfrac=(mauza_zaat_frac>0.6)
 xi: reg school_private frac_wealth child_pca child_parentedu i.district, cluster(mauzaid)
 interact_scores child_pca school_private "Results"
 
-rename child_schoolid schoolid
-drop _m
-sort mauzaid schoolid
-merge m:1 mauzaid schoolid using $pk/constructed_data/school_segregation
-tab _m
-keep if _m==3
 
 * Now do with segregation -- is there a segregation-score tradeoff?
 

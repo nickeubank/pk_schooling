@@ -48,10 +48,11 @@ save $pk/public_leaps_data/panels/public_child_panel_long.dta, replace
 * School panel
 use $datadir/constructed/school_panel/school_panel_long, clear
 
-   drop school_gps_north school_gps_east school_gps_problem school_gps_problem_comment
+   drop school_gps_north school_gps_east school_gps_problem school_gps_problem_comment mauza_frac_zaat
    label var district "district string"
    check_no_identifying
    label var district "district name"
+
 
 save $pk/public_leaps_data/panels/public_school_panel_long.dta, replace
 

@@ -7,6 +7,8 @@ set more off
 use $pk/constructed_data/school_segregation, clear
 
 
+
+
 gen ln_hh=ln(M_numhh)
 gen interact_zaat_private=mauza_zaat_frac*school_private
 label var interact_zaat_private "Fractionalization * Private"
@@ -20,6 +22,7 @@ label var M_wealth "Median Village Expenditure"
 eststo clear
 eststo: xi:reg school_pct_high school_private mauza_zaat_frac interact_zaat_private M_wealth M_literacy ln_hh mauza_pct_high ///
 			 i.district [pw=number_students], cluster(mauzaid)
+
 
 eststo: xi:reg school_pct_high school_private mauza_zaat_frac interact_zaat_private i.mauzaid [pw=number_students], cluster(mauzaid)
 
