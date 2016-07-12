@@ -9,7 +9,7 @@ use $pk/constructed_data/custom_child_panel, clear
 
 
 	gen filler = 1
-	gen filler2=1
+	gen filler2 = 1
 
 
 		capture eststo clear
@@ -115,7 +115,7 @@ graph export $pk/docs/results/kids_combined_district.pdf, replace
 		esttab  using $pk/docs/results/children_nointeract.tex, b(a2) replace nogaps compress label booktabs noconstant ///
 			mgroups("English" "Urdu" "Math" , pattern(0 0   1  0  1   0  ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 			mtitle( "" "" "" "" "" "" "" "" "" ) title(Child Test Scores and Fractionalization \label{kidsnointeract}) ///
-			 drop( "child_age" "child_age2" "child_female" "class_*" "filler" "filler2") ///
+			 drop( "child_age" "child_age2" "child_female" "class_*" ) ///
 			 substitute({table} {sidewaystable})  ///
 			indicate( "District Fixed Effects=_Id*") ///
 			starlevels(* 0.10 ** 0.05 *** 0.01)

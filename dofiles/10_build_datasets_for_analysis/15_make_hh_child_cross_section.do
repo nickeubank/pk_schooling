@@ -161,7 +161,7 @@ replace dad_haseduc = . if dadid == 99 | dadid == -99
 
 * Enrolled children only
 keep if hf1_s5q2==1
-
+keep if age > 4 & age < 16
 
 * Other vars   
    gen school_private=(hf1_s5q3a1_type==2) if hf1_s5q3a1_type~=3
@@ -194,8 +194,7 @@ tab hm1_s0q8_zaat
 tab hm1_s0q8_zaat, nol
 decode hm1_s0q8_zaat, gen(caste_string)
 
-
-do $pk/dofiles/encode_zaat_status.do  caste_string 
+do $pk/dofiles/10_build_datasets_for_analysis/encode_zaat_status.do  caste_string 
    // takes a string and gives back "zaat_high_status var. "
    // I do a lot so put in one file so changes always propogate everywhere. 
 

@@ -7,7 +7,6 @@ set maxvar 30000
 
 use $pk/public_leaps_data/panels/public_child_panel_long, clear
 
-* drop if reportcard==1
 set more off
 
 
@@ -15,15 +14,16 @@ tsset childcode round
 
 
 
-* Only want teachers with more than 10 or 15 kids:
+* Only want teachers with more than 10 kids:
 
 bysort round child_teachercode: egen num=count(child_math_theta)
-drop if num<=10
+drop if num <= 10
 
 drop if child_english_theta==.
 
 
 sort childcode round
+
 * ********************
 * Make a few vars
 * ********************
@@ -35,7 +35,7 @@ foreach x in `codes' {
 }
 
 * Make age squared
-gen child_age2=child_age^2
+gen child_age2 = child_age^2
 
 
 * **************
@@ -44,17 +44,21 @@ gen child_age2=child_age^2
 
 set matsize 2000
 
-
+qqq
 foreach x in english math urdu {
-	xi: reg child_`x'_theta L.child_math_theta L.child_urdu_theta L.child_english_theta child_parentedu child_pca child_age child_age2 t_* i.district i.child_class, cluster(childcode)
+	xi: reg child_`x'_theta L.child_math_theta L.child_urdu_theta L.child_english_theta ///
+			child_parentedu child_pca child_age child_age2 t_* i.district i.child_class ///
+			, cluster(childcode)
 
 	foreach teacher in `codes' {
 		gen valueadded_`x'_`teacher'= _b[t_`teacher']
 		replace valueadded_`x'_`teacher'= . if valueadded_`x'_`teacher'==0
 
+		gen valueadded_se_`x'_`teacher' = _se[t_`teacher']
+		replace valueadded_se_`x'_`teacher' = . if valueadded_se_`x'_`teacher'==0
+
 	}
 }
-
 
 
 
@@ -64,7 +68,9 @@ keep if _n==_N
 gen id=1
 
 
-reshape long valueadded_math_ valueadded_english_ valueadded_urdu_ , i(id) j(teachercode)
+reshape long valueadded_math_ valueadded_english_ valueadded_urdu_ ///
+			 valueadded_se_math_ valueadded_se_english_ valueadded_se_urdu_ , ///
+			 i(id) j(teachercode)
 
 renvars valueadded_*_, postdrop(1)
 drop id

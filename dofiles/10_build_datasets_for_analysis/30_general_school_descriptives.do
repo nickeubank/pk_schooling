@@ -18,7 +18,9 @@ use $pk/public_leaps_data/school/school2/public_generalschool2, clear
 
 	use $pk/public_leaps_data/panels/public_school_panel_long, clear
 
-	keep schoolid mauzaid school_private school_herf school_zaat* round reportcard mauza_numschools_gov mauza_numschools_private child_* mauza_wealth_std mauza_gini_expend school_enrollment
+	keep schoolid mauzaid school_private school_herf school_zaat* round ///
+		reportcard mauza_numschools_gov mauza_numschools_private ///
+		child_* mauza_wealth_std mauza_gini_expend school_enrollment school_facilities_*
 
 	keep if round==2
 

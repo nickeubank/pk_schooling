@@ -18,55 +18,30 @@ do $pk/dofiles/pre_public/00_import_and_anomyimze_original_leaps_data.do
 do $pk/dofiles/pre_public/10_clean_household_census.do
 do $pk/dofiles/pre_public/20_add_xvars.do
 
-*********
-* Part 2: Context / Village descriptives
-*********
-
-do $pk/dofiles/10_village_descriptive_figures.do
-
 
 *********
-* Part 3 : Caste Politics and School Sorting
+* Make analysis datasets
 *********
 
-do $pk/dofiles/20_school_selection_hh.do   // HAS PROBLEMS
-	* Mom educ not in public dataset
-	* Makes hhselection.tex regression table
-
-do $pk/dofiles/30_school_selection_hh.do
-	* Makes:
-	 	* village_toptwo.pdf and school_toptwo.pdf  (part 3)
-	 	* totalpresent.pdf
-	 	* toptwo_combined.pdf
-	 	* intra_versus_intervillage_frac_combined.pdf (part 3)
-	 	* intra_versus_intervillage_frac.pdf
-
-
-do $pk/dofiles/40_enrollment_pctprivate_pooled.do
-	* Makes high_pooling.tex
-
-do $pk/dofiles/50_crosssection_school_descriptives.do
-	* Makes fees.tex
-
-do $pk/dofiles/60_crosssection_child_descriptives.do   // HAS PROBLEMS BUT ALSO MANY MANY RESULTS
-	* makes private_share.tex
-	* makes wealth_and_type.pdf
-	* privatepremium_`x'_crosssection
-	* privatepremium_crossection.tex
-	* twoyear_`x'
-	* twoyear.tex
-	* privatepremium_`x'_crosssection
-
-	* need to find / make interact_scores command. Built from `interact.do` presumably?
-
+do $pk/dofiles/10_build_datasets_for_analysis/15_make_hh_child_cross_section.do
+do $pk/dofiles/10_build_datasets_for_analysis/25_make_school_caste_measures.do
+do $pk/dofiles/10_build_datasets_for_analysis/30_general_school_descriptives.do
+do $pk/dofiles/10_build_datasets_for_analysis/40_make_custom_child_panel.do 
+do $pk/dofiles/10_build_datasets_for_analysis/50_calculate_teacher_valueadded.do
+do $pk/dofiles/10_build_datasets_for_analysis/55_make_custom_teacher_dataset.do
 
 *********
-* Part 4 : Scores
+* Run Analyses
 *********
 
+do $pk/dofiles/20_analysis/10_village_descriptive_figures.do
+do $pk/dofiles/20_analysis/20_school_selection_hh.do
+do $pk/dofiles/20_analysis/30_enrollment_by_caste.do
+do $pk/dofiles/20_analysis/40_enrollment_pctprivate_pooled.do
+do $pk/dofiles/20_analysis/50_crosssection_school_descriptives.do
+do $pk/dofiles/20_analysis/60_crosssection_child_descriptives.do
+do $pk/dofiles/20_analysis/70_master_kids.do
+do $pk/dofiles/20_analysis/75_caste_residual_talent.do
+do $pk/dofiles/20_analysis/85_variation_in_teachers_across_schools.do
 
-do $pk/dofiles/80_master_kids.do   // wants interact
 
-
-do $pk/dofiles/90_caste_residual_talent.do
-	* Esttab syntax error

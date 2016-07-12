@@ -65,7 +65,6 @@ drop _m
 
 	label var school_private "Private School"
 
-	tab mauzaid, gen(_ma)
 	tab child_class, gen(class_)
 	forvalues x=1/8 {
 		label var class_`x' "Class `x' Dummy"
@@ -77,6 +76,33 @@ drop _m
 	label var mauza_wealth "Median Village Expenditure"
 
 
+
+*********
+* Child caste status
+*********
+
+preserve
+	use $pk/constructed_data/hh_child_cross_section.dta, clear
+	keep hhid mid zaat_high_status
+	sort hhid mid
+	tempfile hh
+	save `hh'
+restore
+
+* Check for reasonable merge. Seem to have about 50 kids
+* with hhids in panel who don't have entry in hh survey. 
+* Must have entered hh survey in later years. 
+
+gen has_hhid = hhid!=.
+tab has_hhid
+
+sort hhid mid 
+merge m:1 hhid mid using `hh'
+
+count if _m == 1 & has_hhid == 1
+assert `r(N)' < 217
+drop if _m == 2
+drop _m has_hhid
 
 
 

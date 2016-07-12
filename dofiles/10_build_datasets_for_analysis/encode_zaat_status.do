@@ -18,7 +18,6 @@ foreach x in ANSARI BALOCH MUGHAL "MUSLIM SHEIKH" QURESHI REHMANI SOLANGI {
 	replace zaat_high_status = 0 if `1' == "`x'"	
 }
 
-
 count if `1' != ""
 local total = `r(N)'
 count if zaat_high_status == . & `1' != ""
