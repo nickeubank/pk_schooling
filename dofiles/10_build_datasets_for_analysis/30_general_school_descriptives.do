@@ -49,6 +49,7 @@ use $pk/public_leaps_data/school/school2/public_generalschool2, clear
 	assert _m==3
 	drop _m
 
+
 save $pk/constructed_data/school_descriptives_withfees.dta, replace
 
 

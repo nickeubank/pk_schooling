@@ -5,6 +5,10 @@ set more off
 use $pk/constructed_data/school_segregation, clear
 
 
+*********
+* Intra-versus-Inter-School herf
+*********
+
 
 foreach type in priv govt {
 

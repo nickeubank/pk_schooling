@@ -69,4 +69,5 @@ save $pk/public_leaps_data/panels/public_hh_panel_long.dta, replace
 * Teacher panel
 use $datadir/constructed/teacher_panel/teacher_panel_long, clear
    check_no_identifying
+   label drop childactivity // Round has string labels for some reason. 
 save $pk/public_leaps_data/panels/public_teacher_panel_long.dta, replace

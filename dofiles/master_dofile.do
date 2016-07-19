@@ -14,9 +14,9 @@ set scheme s2mono, permanently
 * -- no processing except removing variables not allowed in a public release.
 ******
 
-do $pk/dofiles/pre_public/00_import_and_anomyimze_original_leaps_data.do
-do $pk/dofiles/pre_public/10_clean_household_census.do
-do $pk/dofiles/pre_public/20_add_xvars.do
+do $pk/dofiles/00_pre_public/00_import_and_anomyimze_original_leaps_data.do
+do $pk/dofiles/00_pre_public/10_clean_household_census.do
+do $pk/dofiles/00_pre_public/20_add_xvars.do
 
 
 *********
@@ -42,6 +42,7 @@ do $pk/dofiles/20_analysis/50_crosssection_school_descriptives.do
 do $pk/dofiles/20_analysis/60_crosssection_child_descriptives.do
 do $pk/dofiles/20_analysis/70_master_kids.do
 do $pk/dofiles/20_analysis/75_caste_residual_talent.do
+do $pk/dofiles/20_analysis/80_teachers_compensation.do
 do $pk/dofiles/20_analysis/85_variation_in_teachers_across_schools.do
 
 

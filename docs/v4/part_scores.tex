@@ -1,0 +1,58 @@
+\documentclass[Eubank_pk_ethnic_sorting.tex]{subfiles}
+
+
+\begin{document}
+
+Having established that the determinants of school choice vary dramatically between caste-homogeneous and caste-heterogeneous villages in Section~\ref{pk_sorting}, this section now turns to an analysis of how differences in sorting impact the test-score gap between government and private schools. If private schools outperform government schools primarily due to differences in the quality of instruction, then the government-private test-score gap should be relatively stable across villages with different caste compositions. If, however, private schools appear to outperform government schools primarily due to differences in the composition of their students, then villages that are subject to different sorting processes should also see differences in the government-private test-score gap. Specifically, the degree to which private schools scores exceed those in government schools should decline as one moves from caste-homogeneous villages (where students sort on academic potential) to caste-heterogeneous villages (where sorting is driven by considerations of caste politics).
+
+\subsection{Measuring Learning}\label{value_added_models}
+
+To measure learning, this analysis employs a lagged-value-added model. Lagged-value-added models have increasingly become the norm in the education research \citep{Gordon:2006wt,McCaffrey:2003vk,Hanushek:2003hz} due to their potential to take into account not only observational differences between students, but also the potential to control for some unobserved differences, and the fact that learning is not entirely persistent (things learned in the past are often forgotten).
+
+The lagged-value-added model incorporates the assumption that current knowledge is an additive function of all current and past inputs and an i.i.d. stochastic error term, and can be expressed as:
+
+\begin{eqnarray}
+	Y_{i,t}=X_{i,t}\alpha+Y_{i,t-1}\beta + \epsilon_{i,t}\label{primary}
+\end{eqnarray}
+
+where $Y_{i,t}$ is child $i$'s test scores at time $t$ and $X_{t,i}$ is a vector of child, school, and village controls at time $t$ (a full discussion of the lagged-value-added model, specifications employed, and identifying assumptions can be found in Appendix~\ref{appendix_valueadded}).
+
+Note that while the inclusion of a lagged dependent variable effectively controls for unobserved heterogeneity that affect differences in test score \emph{levels}, it cannot control for unobserved heterogeneity that affects learning \emph{rates}. It is for this reason that while superior to other available methods, value-added analyses can not fully overcome selection issues.\footnote{Some analysis have turned to second-differencing the data and focusing on students who change schools \citep{Andrabi:2011hl}, but these analyses have their own limitations, among them limited sample sizes (given that changes between types of school are relatively infrequent in most surveys) and the assumption that school changes are not the result of some unobserved shock (i.e. that school switches are not accompanied by contemporaneous with other changes -- a potentially problematic assumption given the relative infrequency with which students change schools).} In the lagged-value-added model, coefficients on independent variables are interpreted as the contribution of each variable to learning.
+
+\subsection{Convergence in Government-Private Test Scores}\label{}
+
+
+Table~\ref{kids} presents lagged-valued-added estimates of learning as a function of various demographic controls and village fractionalization. It shows that the effect of caste fractionalization on the government-private test-score gap (row 2) is negative and significant for English and negative (albeit insignificant) for math and Urdu. Further, as shown in columns (2), (5), and (8) of Table~\ref{kids}, the inclusion of various demographic controls such as a child wealth index and dummies for parental education along with the village fixed effects has no significant effect on the results.
+
+
+\input{../results/children.tex}
+
+To aid in interpretation, Figure~\ref{kidscombined} plots the government-private performance differential as a function of caste fractionalization (these plots correspond to columns (2), (5), and (8) respectively). In all three cases, the rise in fractionalization is associated with a near 50\% decline in the private school premium, although this is by far most striking in the case of English.
+
+The differential impact of village fragmentation on English and other subjects is not surprising. English is generally considered the path to upward mobility in Pakistan, and is often the focus of private schools in Punjab. For example, while only 6\% of government schools use English as one of their languages of instruction, this is the case in 28\% of private schools \citep[p. 49]{Andrabi:2007we}. Indeed, a consistent pattern in the data is that -- possibly as a result of this specialization -- the English test-score gap is consistently the largest among the three subjects tested. 
+
+\begin{figure}[h]
+	\caption{Private School Test Score Premium with Lagged Scores}\label{kidscombined}
+	\centering
+	\includegraphics[scale=0.8]{../results/kids_combined.pdf}
+\end{figure}
+
+
+\subsection{Decomposition of Convergence}\label{village_level_outcomes}
+
+Further evidence that the convergence in government-private test scores is driven differences in student sorting -- not differences in actual learning outcomes -- comes from the fact that while the government-private test-gap decreases, overall learning remains relatively unchanged across villages. As shown in Table~\ref{kidsnointeract} -- which examines the relationship between overall test scores and village heterogeneity -- test scores do not vary with caste composition. English scores are slightly higher in more fractionalized villages in Column 1, but the magnitude of this difference is relatively small, and once more demographic controls are added in Column 2 this effect disappears. No relationship exists for other subjects. Government scores increase and private scores decline with fractionalization, in other words, but those changes are almost perfectly offsetting. 
+
+This is also illustrated in Column 3 of Table~\ref{kids}, where village fixed effects are replaced with district fixed effects, allowing for the inclusion of a caste-heterogeneity variable. Even when controlling for the relatively small improvement in overall English scores, the estimated effect of village caste composition on the government-private test-score gap remains stable, and the level change remains much smaller than the magnitude of test-score convergence. This provides additional evidence that as the determinants of school choice change, it is the \emph{distribution} of academically inclined students that changes, not the performance of the schools themselves.
+
+
+\input{../results/children_nointeract.tex}
+
+
+\subsection{Caste and Residual Academic Potential}\label{residual_potential}
+
+For it to be the case that sorting by caste reduces the degree to which private schools enroll disproportionately academically-inclined students, residual academic potential -- potential that cannot be explained by things like parental education and wealth -- must be equally distributed across different castes (or be distributed slightly in favor of lower status \emph{biraderis}). If not, and even the least talented ``high status'' students were more talented than the most talented ``low status'' students, then the concentration of ``high status'' students in private schools would result in \emph{divergence}, rather than \emph{convergence}, of test scores. As shown in Table~\ref{castesarentdumb}, however, there is no evidence that those from higher social status \emph{biraderis} have higher residual talent than those from low status \emph{biraderis}. As evident from the top row of coefficients, after controlling for other observational factors, student caste does not appear to have any consistent effect on test scores.
+
+\input{../results/status.tex}
+
+
+\end{document}

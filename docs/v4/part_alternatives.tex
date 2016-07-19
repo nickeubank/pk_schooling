@@ -1,0 +1,44 @@
+\documentclass[Eubank_pk_ethnic_sorting.tex]{subfiles}
+
+\begin{document}
+
+Observational studies pointing to the superior performance of private schools are not the only reason that education reform advocates have voiced excitement about the potential of private school growth; private schools also operate in fundamentally different ways from government schools. For that reason, it is important to examine not only whether the government-private performance differential varies with caste heterogeneity, but also whether other factors some suspect explain school differences can be ruled out as alternate explanations.
+
+
+\subsection{Differences in Teacher Incentives}\label{incentives}
+
+Advocates of private schools argue that not only are observational studies able to control for many factors, but there is also evidence to explain \emph{why} private schools outperform government schools. In particular, they point out that private schools appear to address the biggest problem in government schools: low effort. High absenteeism and low accountability in government schools has been well documented \citep{Muralidharan:2008tb, Chaudhury:2006vp}, but appears less prevalent in private schools. The reason, many argue, is that in private schools good teachers are better paid, and poor teachers are let go. This line of reasoning is also buoyed by a growing body of literature that suggests that what matters for success is not the availability of educational ``inputs'' (like qualified, well paid teachers or good facilities), but incentive schemes that reward effort on the behalf of teachers \citep{Hanushek:1997tt,Hanushek:2003hz,Banerjee:2007wx}.
+
+The conclusion of the LEAPS survey authors (full disclosure: this author was a research assistant on the LEAPS project, though not an author) is that this is the case in Pakistan. Private schools deliver better educational outcomes despite hiring only secondary-educated local women with no training and providing them with relatively low wages because private schools incentize good teaching by paying good teachers more, improving effort. This differentiates them from government schools, which offer salaries which are higher but unresponsive to performance. As a result, the authors argue, government school teachers exert less effort. This is illustrated in Figure~\ref{payandabsenteeism} which appears in the original LEAPS report \citep{Andrabi:2007we}. It shows that while frequently absent private school teachers are paid less, absent government school teachers are actually paid \emph{more}. And where private school teachers with high score students are paid more, no such relationship exists for government teachers.
+
+DROP FIGURE
+
+% \begin{figure}[htb]
+% 	\begin{center}
+% 	\caption{Teacher Performance and Compensation}\label{payandabsenteeism}
+% 	\includegraphics[scale=0.82]{../results/absenteeism_and_pay.pdf} \includegraphics[scale=0.8]{../results/compensation_scores.pdf}\\
+% 	\emph{Source: \cite{Andrabi:2007we}, pages 72, 74. Salary bonus or penalty is the degree to which salary differences from predicted values independent of absenteeism or test scores.}
+% 	\end{center}
+% \end{figure}
+
+Table~\ref{teachercompensation} below recreates the analyses underlying the two plots in Figure~\ref{payandabsenteeism} with two adjustments: first, rather than measuring performance using average test scores (in levels), more rigorous teacher ``value-added'' scores (Specification~\ref{teacherspecification}) are employed to measure teacher contributions to learning; second, a village fractionalization measure is included in all results as an interaction term. If it is the case that differences in incentive schemes are driving test score convergence, then we should see (a) the private-school salary penalty for absenteeism decline in fractionalization, and (b) the compensation premium (compensation above what is otherwise predicted) for performance decline. As shown in the table, however, the absenteeism penalty actually \emph{increases} in fractionalization (which under the incentive story should result in \emph{increased} private school scores), and no relationship exists between performance and compensation. In sum, there is no relationship between fractionalization and how government teachers are compensated.
+
+
+\input{../results/teachercompensation.tex}
+
+
+\subsection{Differences in School Inputs}
+
+A second potential explanation for variation in the government-private school performance differential is that the availability of school resources varies with village caste heterogeneity. To test this, this paper examines the relationship between village fragmentation and different school inputs.
+
+Table~\ref{privateteachers} presents a series of school-level results in which measures of school- and teacher-quality in private schools are regressed against village fractionalization and a number of controls. The table shows that there is little or no evidence that -- at least in terms of visible inputs -- differences in inputs can explain the decline in private school performance in fractionalized villages. If anything, private school teachers appear to be slightly \emph{better} educated in fractionalized villages.
+
+\input{../results/private_teachers.tex}
+
+Table~\ref{governmentteachers} repeats this exercise for government schools. It should be noted that government schools in Pakistan are administered at the state level, and are thus relatively insulated from village politics, making any such differences unlikely. Nevertheless, results are presented for thoroughness. These results show no difference in school inputs across villages.
+
+\input{../results/government_teachers.tex}
+
+
+
+\end{document}

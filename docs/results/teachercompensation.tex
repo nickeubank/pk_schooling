@@ -1,33 +1,27 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Village Fractionalization and Teacher Compensation\label{teachercompensation}}
-\begin{tabular}{l*{4}{c}}
+\begin{tabular}{l*{8}{c}}
 \toprule
-                &\multicolumn{2}{c}{Private Teachers}&\multicolumn{2}{c}{Government Teachers}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
-                &\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}\\
+                &\multicolumn{2}{c}{Private Teachers}&\multicolumn{6}{c}{Government Teachers}                                      \\\cmidrule(lr){2-3}\cmidrule(lr){4-9}
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                &\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{Log Salary}&\multicolumn{1}{c}{est5}&\multicolumn{1}{c}{est6}&\multicolumn{1}{c}{est7}&\multicolumn{1}{c}{est8}\\
 \midrule
-Days Absent Last Month&     21.4   &    -36.7   &        0   &     36.9   \\
-                &   (0.60)   &  (-1.43)   &        .   &   (1.60)   \\
-Mauza Biraderi Fractionalization (from top 24 codes)&    305.2   &    358.3   &   -104.2   &    263.7   \\
-                &   (1.08)   &   (1.06)   &  (-0.26)   &   (0.60)   \\
-Days Absent * Fractionalization&    -94.8   &            &     94.0   &            \\
-                &  (-1.48)   &            &   (0.97)   &            \\
-Female          &   -530.0***&   -458.7***&    -34.7   &    -23.7   \\
-                &  (-4.64)   &  (-3.13)   &  (-0.32)   &  (-0.18)   \\
-Age             &     20.5***&     58.5***&    206.9***&    216.7***\\
-                &   (2.67)   &   (3.88)   &  (11.50)   &   (9.55)   \\
-Average Value Added Score&            &    164.2   &            &   -216.4   \\
-                &            &   (0.38)   &            &  (-0.58)   \\
-Value-Added * Fractionalization&            &    -36.1   &            &    -91.8   \\
-                &            &  (-0.06)   &            &  (-0.16)   \\
-Constant        &   1496.1***&   1475.2*  &  -4883.2***&  -6247.8***\\
-                &   (2.77)   &   (1.93)   &  (-6.03)   &  (-8.52)   \\
-District Fixed Effects&      Yes   &      Yes   &      Yes   &      Yes   \\
+Days Absent Last Month&    0.017***&    0.014   &            &            &  -0.0060*  &   0.0094   &            &            \\
+                & (0.0039)   &  (0.010)   &            &            & (0.0033)   &  (0.012)   &            &            \\
+Biraderi Fractionalization&            &  -0.0028   &            &    -0.11   &            &     0.30   &            &     0.16   \\
+                &            &   (0.13)   &            &  (0.094)   &            &   (0.20)   &            &   (0.26)   \\
+Days Absent * Fractionalization&            &   0.0055   &            &            &            &   -0.023   &            &            \\
+                &            &  (0.018)   &            &            &            &  (0.017)   &            &            \\
+Average Value Added Score&            &            &    0.014   &     0.23*  &            &            &     0.13   &    -0.13   \\
+                &            &            &  (0.046)   &   (0.14)   &            &            &  (0.085)   &   (0.31)   \\
+Value-Added * Fractionalization&            &            &            &    -0.37*  &            &            &            &     0.39   \\
+                &            &            &            &   (0.20)   &            &            &            &   (0.41)   \\
+Mauza Fixed Effects&      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   &      Yes   \\
 \midrule
-Observations    &     1334   &      379   &     1655   &      785   \\
+Observations    &     3685   &     3685   &      784   &      784   &     4638   &     4638   &      379   &      379   \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
-\multicolumn{5}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize * p<0.10, ** p<0.05, *** p<0.01}\\
 \end{tabular}
 \end{table}

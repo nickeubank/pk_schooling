@@ -819,7 +819,7 @@ label values zaat_code zaat_code
 	assert mauza_zaat_frac >= 0 & mauza_zaat_frac_others <=1 & mauza_zaat_frac_others !=.
 	drop tmp*  hhtag mztag
 
-	label var mauza_zaat_frac "Mauza Biraderi Fractionalization (from top 24 codes)"
+	label var mauza_zaat_frac "Biraderi Fractionalization"
 
 corr mauza_zaat_frac mauza_zaat_frac_others 
 assert `r(rho)' > 0.95
@@ -843,21 +843,22 @@ drop mauza_zaat_frac_others mauza_zaat_frac_all
 sum zaat_code
 local num_zaats = `r(max)'
 
-
 forvalues z = 1 / `num_zaats' {
 	gen temp_`z' = M_zaat_numhh / M_numhh if zaat_code == `z'
 	bysort mauzaid: egen mauza_share_zaat_`z' = max(temp_`z')
 	drop temp_`z'
 	replace mauza_share_zaat_`z' = 0 if mauza_share_zaat_`z' == .
 	label var mauza_share_zaat_`z' "Share of total village that's Zaat `z' "
+
+	assert 0 <= mauza_share_zaat_`z' & mauza_share_zaat_`z' <= 1
 }
+
+
 
 duplicates drop mauzaid, force
 
 * Get share in top two. Stupid convoluted because of troubles with row-ops in Stata.  
 
-sum zaat_code
-local num_zaats = `r(max)'
 
 egen t_1 = rowmax(mauza_share_zaat_*)
 
@@ -872,10 +873,34 @@ forvalues x = 1 / `num_zaats' {
 
 egen t_2 = rowmax(mauza_share_zaat_*)
 
-assert t_1 >= t_2
-
 gen share_in_toptwo = t_1 + t_2
+
+
+	***
+	* Tests
+	***
+
+	* Order
+	assert t_1 >= t_2
+
+	* Range
+	assert 0 < t_1 & t_1 <= 1
+
+	assert 0 <= t_2 & t_2  <= 1
+
+	assert 0 < share_in_toptwo & share_in_toptwo <= 1
+
+	* Not all same
+	assert t_1 != t_2
+
+
 drop to_drop t_1 t_2 mauza_share_zaat_*
+
+
+*****
+* Tests
+*****
+assert share_in_toptwo <= 1
 
 **********
 * Clean up a little

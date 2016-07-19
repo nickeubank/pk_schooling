@@ -35,11 +35,11 @@ foreach x in government private {
 	restore
 
 	local upper=proper("`x'")
-	esttab  using $pk/docs/results/`x'_teachers.tex, b(a2) replace nogaps compress label noconstant booktabs ///
+	esttab  using $pk/docs/results/`x'_teachers.tex, b(a2)  se  replace nogaps compress label noconstant booktabs ///
 		title(`upper' Teacher Characteristics and Village Fractionalization\label{`x'teachers}) ///
 		indicate(District Fixed Effects=_Id*) ///
 		 substitute({table} {sidewaystable})  ///
-		starlevels(* 0.10 ** 0.05 *** 0.01) 
+		star(* 0.10 ** 0.05 *** 0.01) 
 		
 		* note("\specialcell{All results clustered at the village level.\\All regressions weighted by number of students.\\Robust t-statistics presented in parenthesis.}")
 	

@@ -158,9 +158,12 @@ label var school_facilities_basic "\specialcellc{Basic School \\\\ Facility Inde
 bysort teachercode: egen first_round = min(round)
 keep if round == first_round
 drop first_round
+
+
 keep avg_* exp_* educ_* female has_* ///
 	district mauzaid teachercode school_private mauza_zaat_frac *_frac_interact ///
-	school_facilities_basic M_wealth ln_numhh
+	school_facilities_basic M_wealth ln_numhh ln_salary
+
 
 
 *******

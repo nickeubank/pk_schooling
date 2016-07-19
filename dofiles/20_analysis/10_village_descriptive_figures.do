@@ -1,6 +1,8 @@
 
 use $pk/public_leaps_data/public_mauza.dta, replace
 
+assert _N == 112
+
 ***
 * Show fractionalization distribution
 ***
@@ -27,24 +29,9 @@ foreach indicator in M_wealth M_literacy M_gini_land M_penrolled M_schools_perhh
 	}
 
 esttab  using $pk/docs/results/village_by_frac.tex, b(a2) replace nogaps compress label noconstant booktabs ///
-		title(Village Characteristics and Fractionalization\label{villagebyfrac}) ///
+		title(Village Characteristics and Fractionalization\label{villagebyfrac}) se ///
 		indicate(District FE=_Id*) ///
 		mtitle("\specialcellc{Median\\Wealth}" "\specialcellc{Adult\\Literacy}" "\specialcellc{Land\\Gini}" "\specialcellc{Enrollment\\Pct}" "\specialcellc{Schools\\per HH}" "Log Num HH") ///
-		starlevels(\* 0.10 \*\* 0.05 \*\*\* 0.01) ///
-
-
-**
-* Summarize by tercile
-**
-
-xtile zfrac3=mauza_zaat_frac, n(3)
-
-
-
-tabstat  M_wealth M_literacy M_penrolled M_schools_perhh M_numhh, by(zfrac3) save format(%9.2g)
-matrix define results=r(Stat3)\r(Stat2)\r(Stat1)\r(StatTotal)
-matrix rownames results= "Highest_Frac" "Moderate_Frac" "Lowest_Fract" "All"
-matrix colnames results="Median_Expend" "Adult_Lit_Rate" "Pct_Enrollment" "Schools_per_HH"  "Num_Households"
-
-outtable using $pk/docs/results/village_summary, mat(results)  replace clabel(vsummary) format(%9.2g) caption(Village Summary Statistics)
+		star(* 0.10 ** 0.05 *** 0.01) ///
+		addnote("Standard errors clustered by District.")
 

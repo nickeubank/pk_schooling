@@ -27,68 +27,6 @@ gen safer_school_sample = (test >= 90)
 
 
 
-
-
-* ****************
-* Number from first two groups:
-* ****************
-
-
-
-* Drop percentages of "other"
-
-forvalues x = 1/6 {
-	gen pcent_noother`x' = pcent`x'
-	gen temp_`x' = (zaat`x' == 26)
-	replace pcent_noother`x' = . if temp_`x' == 1
-	drop temp_`x'
-}
-
-
-***
-* Get total in top two groups
-***
-
-egen t_1 = rowmax(pcent_noother*)
-
-gen to_drop = .
-forvalues x = 1 / 6 {
-	replace to_drop = `x' if (pcent_noother`x' == t_1) & (to_drop == .)
-}
-
-
-forvalues x = 1 / 6 {
-	gen temp_pcent_noother`x' = pcent_noother`x'
-	replace temp_pcent_noother`x' = . if (to_drop == `x')
-}
-
-egen t_2 = rowmax(temp_pcent_noother*)
-replace t_2 = 0 if t_2 == .  
-		// In theory, should only exist if t_1 == 100, but 
-		// because I drop "other" and because respondent-reported
-		// not calculated,
-		// doesn't actually hold.
-		// sometimes report totals of less than 100.
-
-gen share_toptwo = t_1 + t_2
-
-***
-* Tests
-***
-
-* Order
-assert t_1 >= t_2
-
-* Not all same
-count if t_1 == t_2
-local matching = `r(N)'
-count
-assert `matching' < `r(N)' / 2
-
-drop to_drop t_1 t_2
-
-
-
 *********
 *
 *
@@ -135,7 +73,9 @@ corr max intraschool_frac_full
 assert `r(rho)' < 0
 
 *****
+*
 * Inter-school, intra-village
+*
 *****
 
 
@@ -230,6 +170,145 @@ foreach sample in full safer {
 	}
 }
 
+
+**********
+* Population Share of two largest castes 
+* At Village Level
+*
+* And at school level
+***********
+
+
+***
+* School level
+***
+
+
+* Drop percentages of "other"
+forvalues x = 1/6 {
+	gen pcent_noother`x' = pcent`x'
+	gen temp_`x' = (zaat`x' == 26)
+	replace pcent_noother`x' = . if temp_`x' == 1
+	drop temp_`x'
+}
+
+
+***
+* Get total in top two groups
+***
+
+egen t_1 = rowmax(pcent_noother*)
+
+gen to_drop = .
+forvalues x = 1 / 6 {
+	replace to_drop = `x' if (pcent_noother`x' == t_1) & (to_drop == .)
+}
+
+
+forvalues x = 1 / 6 {
+	gen temp_pcent_noother`x' = pcent_noother`x'
+	replace temp_pcent_noother`x' = . if (to_drop == `x')
+}
+
+egen t_2 = rowmax(temp_pcent_noother*)
+replace t_2 = 0 if t_2 == .  
+		// In theory, should only exist if t_1 == 100, but 
+		// because I drop "other" and because respondent-reported
+		// not calculated,
+		// doesn't actually hold.
+		// sometimes report totals of less than 100.
+
+replace t_1 = t_1 / 100
+replace t_2 = t_2 / 100
+
+gen school_share_toptwo_full = t_1 + t_2  if full == 1
+gen school_share_toptwo_safer = t_1 + t_2 if safer == 1
+
+***
+* Tests
+***
+
+* Order
+assert t_1 >= t_2
+
+* Not all same
+count if t_1 == t_2
+local matching = `r(N)'
+count
+assert `matching' < `r(N)' / 2
+
+* Range
+assert (0 < t_1) & (t_1 <= 1) if t_1 != .
+assert 0 <= (t_1 + t_2) if t_1 != .
+assert 1.01 >= (t_1 + t_2) if t_1 != . // small floating precision issue. 
+
+drop to_drop t_1 t_2
+
+********
+* Now for village level
+********
+
+foreach sample in full safer {
+
+	egen t_1 = rowmax(mauza_caste_all_*_`sample')
+
+	gen to_drop = .
+	forvalues x = 1 / `num_zaats_minus_other' {
+		replace to_drop = `x' if (mauza_caste_all_`x'_`sample' == t_1) & (to_drop == .)
+	}
+
+	forvalues x = 1 / `num_zaats_minus_other' {
+		gen temp_caste_count`x' = mauza_caste_all_`x'_`sample'
+		replace temp_caste_count`x' = . if (to_drop == `x')
+	}
+
+	egen t_2 = rowmax(temp_caste_count*)
+	replace t_2 = 0 if t_2 == .  
+		// In theory, should only exist if t_1 == 100, but 
+		// because I drop "other" and because respondent-reported
+		// not calculated,
+		// doesn't actually hold.
+		// sometimes report totals of less than 100.
+
+
+
+	gen village_share_toptwo_`sample' = (t_1 + t_2) / mauza_students_all_`sample'
+	label var village_share_toptwo_`sample' "Share of students in village in two largest zaats, `sample' sample"
+
+	***
+	* Tests
+	***
+
+	* Order
+	assert t_1 >= t_2
+
+	* Range
+	assert (0 < (t_1 / mauza_students_all_`sample')) ///
+		     & ((t_1 / mauza_students_all_`sample') < 1) ///
+		     if t_1 !=. & mauza_students_all_`sample'!=.
+
+	assert (0 < (t_2 / mauza_students_all_`sample')) ///
+			 & ((t_2 / mauza_students_all_`sample') < 1) ///
+			 if t_2 !=. & mauza_students_all_`sample' != .
+
+	assert (0 < village_share_toptwo_`sample') ///
+			& (village_share_toptwo_`sample' <= 1) ///
+			if village_share_toptwo_`sample' != .
+
+	* Not all same
+	count if t_1 == t_2
+	local matching = `r(N)'
+	count
+	assert `matching' < `r(N)' / 2
+
+	drop t_1 t_2 temp_caste_count* to_drop
+
+	corr village_share_toptwo_`sample' school_share_toptwo_`sample'
+	assert `r(rho)' > 0
+		
+}
+
+
 **********
 * Check sample restriction importance
 **********
@@ -290,6 +369,8 @@ forvalues x = 1/6 {
 		replace zaat_string="SHEIKH" if zaat_string == "SHIEKH"
 		replace zaat_string="SOLANGI" if zaat_string == "SOLANGI"
 
+
+
 	do $pk/dofiles/10_build_datasets_for_analysis/encode_zaat_status.do  zaat_string 
     // takes a string and gives back "zaat_high_status var. "
     // I do a lot so put in one file so changes always propogate everywhere. 
@@ -300,40 +381,47 @@ forvalues x = 1/6 {
 
 * Number by Status in each school
 foreach high_status in 0 1   {
-	gen num_of_status_`high_status'=0
+	gen num_status_`high_status'=0
 	
 	forvalues groupcounter = 1/6 {
-		replace num_of_status_`high_status' = num_of_status_`high_status'+ ///
+		replace num_status_`high_status' = num_status_`high_status' + ///
 											 (number_students * pcent`groupcounter'/100) ///
 											if zaat_high_status`groupcounter' == `high_status'
 	}
-	bysort schoolid mauzaid: egen school_num_status_`high_status' = sum(num_of_status_`high_status')
+	duplicates report schoolid mauzaid
 }
 
 
-bysort mauzaid: egen tempnum=sum(school_num_status_1)
-bysort mauzaid: egen tempdenom=sum(school_num_status_0)
+bysort mauzaid: egen tempnum=sum(num_status_1)
+bysort mauzaid: egen tempdenom=sum(num_status_0)
 gen mauza_pct_high = tempnum / (tempnum+tempdenom)
 label var mauza_pct_high "Share of students in village of high status"
 drop tempnum tempdenom
 
-gen school_pct_high=school_num_status_1 /( school_num_status_1 + school_num_status_0)
+gen school_pct_high= num_status_1 /( num_status_1 + num_status_0)
 label var school_pct_high "Share of students high status"
-
-
 
 
 gen school_private = (gs2_s0q5_type == 1) if gs2_s0q5_type == 1 | gs2_s0q5_type == 2
 
 
+***********
+* Mauza level terciles
+***********
+drop mtag
+egen mtag = tag(mauzaid)
+xtile t_zfrac = mauza_zaat_frac if mtag == 1, n(3)
+bysort mauzaid: egen zfrac3 = max(t_zfrac)
+drop t_zfrac
 
 ***********
 * Organize vars
 ***********
 
 
-keep mauzaid schoolid mauza_frac_* intraschool_frac_* school_segregation_* number_students priv govt all mtag ///
-	 school_pct_high mauza_pct_high school_private M_numhh M_literacy mauza_zaat_frac M_wealth district
+keep mauzaid schoolid mauza_frac_* intraschool_frac_* school_segregation_* number_students priv govt all ///
+	 school_pct_high mauza_pct_high school_private M_numhh M_literacy mauza_zaat_frac M_wealth district ///
+	 zfrac3 *_share_toptwo* 
 
 
 renvars *_full, postdrop(5)

@@ -44,7 +44,7 @@ gen child_age2 = child_age^2
 
 set matsize 2000
 
-qqq
+
 foreach x in english math urdu {
 	xi: reg child_`x'_theta L.child_math_theta L.child_urdu_theta L.child_english_theta ///
 			child_parentedu child_pca child_age child_age2 t_* i.district i.child_class ///
