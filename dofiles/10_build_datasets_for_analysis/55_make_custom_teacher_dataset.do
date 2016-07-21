@@ -17,15 +17,17 @@ rename roster_mauzaid mauzaid
 keep if roster_current_teacher == 1
 sort teachercode
 
+
 *****
 * Add value added scores
 *****
 
 merge m:1 teachercode using $pk/constructed_data/teacher_value_added_scores
 
-* One non-merge, source unclear. 
+* Two non-merge, source unclear. But small enough probably just cleanliness issue. 
+tab _m
 count if _m == 2
-assert `r(N)' < 2
+assert `r(N)' < 3
 drop if _m == 2
 drop _m
 
@@ -39,7 +41,6 @@ drop if mauzaid >= 200 & mauzaid != . // Teachers from outside of village
 
 sort mauzaid
 merge m:1 mauzaid using $pk/public_leaps_data/public_mauza
-
 assert _m == 3
 drop _m
 
@@ -149,10 +150,6 @@ label var va_frac_interact "Value-Added * Fractionalization"
 
 
 
-label var ln_numhh "\specialcell{Log Number \\\\ of Households}"
-label var M_wealth "\specialcell{Median Village \\\\ Expenditures}"
-label var school_facilities_basic "\specialcellc{Basic School \\\\ Facility Index}"
-
 
 
 bysort teachercode: egen first_round = min(round)
@@ -195,9 +192,27 @@ restore
 
 sort teachercode
 merge 1:1 teachercode using `numkids'
+tab _m
 assert _m != 1 if avg_valueadded != . // no one with value added should not have a value
 drop if _m == 2
 drop _m
+
+
+******
+* Sample size tests
+******
+duplicates report teachercode
+assert `r(unique_value)' > 8000 & `r(unique_value)' < 8800
+assert `r(unique_value)' == `r(N)'
+
+duplicates report teachercode if school_private == 1
+assert `r(unique_value)' > 4300 & `r(unique_value)' < 4800
+
+duplicates report teachercode if school_private == 0
+assert `r(unique_value)' > 3300 & `r(unique_value)' < 3900
+
+count if avg_valueadded !=.
+assert `r(N)' > 1900 & `r(N)' < 2000
 
 
 save $pk/constructed_data/custom_teacher_dataset.dta, replace

@@ -40,23 +40,15 @@ use $pk/constructed_data/custom_child_panel, clear
 			assert `e(N)' > 26000
 
 
-			eststo: xi: reg child_`x'_theta school_private mauza_zaat_frac interact_zaat_private  ///
-				child_female  child_age child_age2 class_* child_pca child_parentedu  ///
-				lagged_english lagged_math lagged_urdu mauza_literacy ln_numhh mauza_gini_land i.district, cluster(mauzaid)
-
-			* All children with test scores, lagged test scores, and longer survey questionnaire
-			assert `e(N)' > 26000
-
-
 }
 
 
 		esttab  using $pk/docs/results/children.tex, b(a2)  se  replace nogaps compress label booktabs noconstant ///
-			mgroups("English" "Urdu" "Math" , pattern(0 0 0  1 0 0  1 0  0  ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
+			mgroups("English" "Urdu" "Math" , pattern(0 0   1 0   1 0    ) prefix(\multicolumn{@span}{c}{) suffix(})  span erepeat(\cmidrule(lr){@span}) )   ///
 			mtitle( "" "" "" "" "" "" "" "" "" ) title(Child Test Scores\label{kids}) ///
 			 drop(  "child_age" "child_age2" "child_female" "class_*" "filler") ///
 			 substitute({table} {sidewaystable})  ///
-			indicate( "Village Fixed Effects=_Ima*" "District Fixed Effects=_Id*") ///
+			indicate( "Village Fixed Effects=_Ima*" ) ///
 			star(* 0.10 ** 0.05 *** 0.01) ///
 			addnote("Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.")
 

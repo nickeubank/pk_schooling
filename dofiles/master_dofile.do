@@ -8,7 +8,7 @@
 global pk "/users/nick/projects/pk_schooling/"
 global datadir "/users/nick/projects/leaps/data"
 set scheme s2mono, permanently
-
+qqq
 ******
 * Import and anonymize original LEAPS data
 * -- no processing except removing variables not allowed in a public release.
