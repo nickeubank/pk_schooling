@@ -42,16 +42,3 @@ foreach type in priv govt {
 
 	graph combine `type_govt'.gph `type_priv'.gph, note("Fractionalization is probability two randomly chosen students will be from different castes.")
 	graph export $pk/docs/results/intra_versus_intervillage_frac_combined.pdf, replace
-
-
-
-	twoway (scatter intraschool_frac mauza_frac_all [fw=number_students], msymbol(circle_hollow)) ///
-		   (lpoly intraschool_frac mauza_frac_all [fw=number_students], lstyle(bold) lwidth(thick) deg(1) ) ///
-		   (lfit mauza_frac_all mauza_frac_all if mtag==1, lpattern(dash)), ///
-		aspectratio(1) ///
-		legend(label(3 "45 Degree") label(2 "Intra-School Fractionalization" "Weighted by Number of Students") label(1 "Individual Schools" "Scaled to # Primary Students") cols(1)) ///
-		xtitle("Village Fractionalization (For Enrolled Students)") ytitle("Intra-School Fractionalization") title(School Segregation) ///
-		note("Fractionalization is probability two randomly chosen students will be from different castes.")
-	graph export $pk/docs/results/intra_versus_intervillage_frac.pdf, replace
-
-

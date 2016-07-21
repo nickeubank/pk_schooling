@@ -1,17 +1,44 @@
 
+Replication Package for *Decomposing the Government-Private School Performance Differential: Village Ethnic Politics and School Sorting*
+==========================================================================================================================================
+
+This repository contains all code necessary for replicating *Decomposing the Government-Private School Performance Differential: Village Ethnic Politics and School Sorting* by Nick Eubank. 
 
 
-# Stata requirements
-Several components of this analysis require matsize to be set above 800 (for example in calculation of teacher value-added scores), which generally requires StataMP.
+Data
+-----------
+
+The data required for replication comes from the Learning and Educational Achievement in Punjab Schools (LEAPS) survey, 
+and should be publicly available `from the LEAPS website <http://www.leapsproject.org>`_. If data cannot be 
+found there, it should be possible to obtain it from the LEAPS project leads Jishnu Das and Tahir Andrabi. 
+
+Note that as of July 2016, efforts are underway to update the LEAPS data, and the website is currently down. This should be resolved soon. 
+
+Replicating
+------------
+
+# Download this repository
+# Download the public LEAPS data and place it in the `public_leaps_data` folder in this directory. The data should consist of three folders 
+-- `household`, `panels`, and `school` -- along with a standalone `public_mauza.dta` file. 
+# Open the `dofiles/master_dofile.do` file and set the global `pk` at the top of the file to the location of this repository. 
+# Ensure the lines that call the first set of dofiles in `master_dofile.do` (those in `00_pre_public`) are commented out, along with the assignment
+of `global datadir`. As noted in the comments, these are included for transparency but require non-public data to run.
+# Copy the `interact.ado` file in `dofiles/ado` into your personal ado directory (see notes below for details). 
+# Run `findit renvars` in your Stata terminal and install the linked package.
+# Run `master_dofile.do`. 
+
+All results should be found in `docs/results`.
 
 
-# Required stata packages:
-   - `lookfor` (findit lookfor)
-- rowsort
+Stata requirements
+-------------------
+All code was designed to run in Stata 12. Note several components of this analysis require matsize to be set above 800 (for example in calculation of teacher value-added scores), which generally requires StataMP.
 
-# Adding .ado files
-In addition to packages one can install, this codes also make use of two included
-ado files, both located in the `ado` folder. To install these, you must place
+
+Adding .ado files
+-------------------
+In addition to packages one can install directly, this codes also make use of an included
+ado file located in the `ado` folder. To install this, you must place
 them in your system's ado directory.
 
 To find the ado directory, type `sysdir` in Stata, locate the "personal" folder

@@ -47,4 +47,5 @@ use $pk/constructed_data/custom_child_panel, clear
 			 substitute({table} {sidewaystable})  ///
 			indicate( "Village Fixed Effects=_Ima*" "District Fixed Effects=_Id*") ///
 			star(* 0.10 ** 0.05 *** 0.01) ///
-			addnote(Controls for age, age squared, gender, and class omitted from table. Standard errors clustered at village level.)
+			addnote("Controls for age, age squared, gender, and class omitted from table." ///
+			"Standard errors clustered at village level.")
