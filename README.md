@@ -17,15 +17,13 @@ Note that as of July 2016, efforts are underway to update the LEAPS data, and th
 Replicating
 ------------
 
-# Download this repository
-# Download the public LEAPS data and place it in the `public_leaps_data` folder in this directory. The data should consist of three folders 
--- `household`, `panels`, and `school` -- along with a standalone `public_mauza.dta` file. 
-# Open the `dofiles/master_dofile.do` file and set the global `pk` at the top of the file to the location of this repository. 
-# Ensure the lines that call the first set of dofiles in `master_dofile.do` (those in `00_pre_public`) are commented out, along with the assignment
-of `global datadir`. As noted in the comments, these are included for transparency but require non-public data to run.
-# Copy the `interact.ado` file in `dofiles/ado` into your personal ado directory (see notes below for details). 
-# Run `findit renvars` in your Stata terminal and install the linked package.
-# Run `master_dofile.do`. 
+* Download this repository
+* Download the public LEAPS data and place it in the `public_leaps_data` folder in this directory. The data should consist of three folders - `household`, `panels`, and `school` -- along with a standalone `public_mauza.dta` file. 
+* Open the `dofiles/master_dofile.do` file and set the global `pk` at the top of the file to the location of this repository. 
+* Ensure the lines that call the first set of dofiles in `master_dofile.do` (those in `00_pre_public`) are commented out, along with the assignment of `global datadir`. As noted in the comments, these are included for transparency but require non-public data to run.
+* Copy the `interact.ado` file in `dofiles/ado` into your personal ado directory (see notes below for details). 
+* Run `findit renvars` in your Stata terminal and install the linked package.
+* Run `master_dofile.do`. 
 
 All results should be found in `docs/results`.
 
@@ -49,3 +47,13 @@ that directory, and restart Stata.
 Note `sysdir` will list the places Stata looks for ado files, even if those folders
 don't exist. For example, I didn't actually have a directory called "personal"
 where Stata was looking for it, so I had to create one first.
+
+
+Commit history
+---------------
+
+Unfortunately, this repository does not include the entire history of this project. This project was originally written as a 
+qualifying paper long before I was familiar with `git` and before I had developed good programming style. 
+
+As such, the commit history in this repository begins when I started the process of cleaning and reorganizing all the (spagetti) 
+code I had initially written for the qualifying paper.
