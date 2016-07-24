@@ -9,7 +9,7 @@ Data
 -----------
 
 The data required for replication comes from the Learning and Educational Achievement in Punjab Schools (LEAPS) survey, 
-and should be publicly available `from the LEAPS website <http://www.leapsproject.org>`_. If data cannot be 
+and should be publicly available (from the LEAPS website)[http://www.leapsproject.org]. If data cannot be 
 found there, it should be possible to obtain it from the LEAPS project leads Jishnu Das and Tahir Andrabi. 
 
 Note that as of July 2016, efforts are underway to update the LEAPS data, and the website is currently down. This should be resolved soon. 

@@ -8,7 +8,7 @@ use $pk/constructed_data/school_segregation, clear
 *********
 * Intra-versus-Inter-School herf
 *********
-
+egen mtag = tag(mauzaid)
 
 foreach type in priv govt {
 
